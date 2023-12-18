@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "gh-pages": "^6.1.0"
+  },
+  "name": "naver-clone",
+  "description": "",
+  "version": "1.0.0",
+  "main": "postcss.config.js",
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "deploy": "gh-pages-d build",
+    "predeploy": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://redius01.github.io/naver-clone/"
+}
