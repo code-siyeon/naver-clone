@@ -704,7 +704,7 @@
         padding: 18px 20px 17px;
     }
 
-    
+
     #main-newsstand-top header a,
     #main-shopping-top header a,
     #main-recommend-top header a {
@@ -2526,8 +2526,8 @@
     }
 
     .VIBE-content img:hover {
-        transition: transform .4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        transform: scale(1.06);
+        transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transform: scale(1.02);
         overflow: hidden;
     }
 
@@ -2579,13 +2579,13 @@
 
 
     .m-naver {
-        position: relative;
         display: inline-block;
+        position: relative;
         margin-bottom: -15px;
         padding: 21px 0 17px;
-        line-height: 25px;
         width: 384px;
         height: 63px;
+        line-height: 25px;
         text-align: left;
     }
 
@@ -2597,13 +2597,13 @@
     .m-naver::before {
         content: "";
         display: inline-block;
+        width: 22px;
+        height: 22px;
+        margin: 2px 11px 0 3px;
         background-image: url(./favicon.png);
         background-size: 433px 412px;
         background-position: -363px -223px;
         background-repeat: no-repeat;
-        width: 22px;
-        height: 22px;
-        margin: 2px 11px 0 3px;
     }
 
 
@@ -2627,7 +2627,7 @@
         padding: 8px 50px 8px 18px;
     }
 
-    #whale>a {
+    #whale a {
         overflow: hidden;
         display: flex;
         width: 352px;
@@ -2637,11 +2637,7 @@
         align-items: center;
     }
 
-    #whale i {
-        background: url(./whale.png);
-        background-size: 42px 42px;
-        width: 42px;
-        height: 42px;
+    #whale img {
         display: block;
         margin-right: 12px;
     }
@@ -2656,32 +2652,28 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         color: var(--color_body);
-        font-weight: bold;
         font-size: 14.7px;
         text-align: start;
     }
 
-    .whale-content div:hover {
-        text-decoration: underline;
-    }
+
 
     .whale-content div:last-child {
         color: var(--color_caption2);
         margin-top: 2px;
         line-height: 20px;
-        font-weight: 500px;
     }
 
-    #whale>a .circle {
+    #whale a .circle {
         position: absolute;
-        top: 50%;
+        top: 45%;
         right: 18px;
         height: 6px;
-        margin-top: -3px;
+        margin-top: -5px;
     }
 
-    #whale>a .circle::after,
-    #whale>a .circle::before {
+    #whale a .circle::after,
+    #whale a .circle::before {
         content: " ";
         width: 6px;
         height: 6px;
@@ -2693,7 +2685,6 @@
 
     #whale>a .circle::after {
         margin-left: 4px;
-
     }
 
     #whale>a .circle::before {
@@ -4080,9 +4071,9 @@
                     </section>
                     <section id="whale">
                         <a href="#">
-                            <i></i>
+                            <img src="./whale.png" width="42px" height="42px">
                             <div class="whale-content">
-                                <div>나만의 스마트한 브라우저 웨일</div>
+                                <div class="bold">나만의 스마트한 브라우저 웨일</div>
                                 <div>인터넷을 여는 가장 스마트한 방법</div>
                             </div>
                             <div class="circle"></div>
