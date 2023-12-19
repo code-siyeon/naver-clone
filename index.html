@@ -2565,7 +2565,7 @@
     }
 
 
-    .m-naver {
+    #m-naver {
         position: relative;
         display: inline-block;
         position: relative;
@@ -2634,7 +2634,7 @@
         display: inline-block;
     }
 
-    #whale-content div {
+    #whale-content {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -2643,17 +2643,13 @@
         text-align: start;
     }
 
-    .whale-content div:hover {
-        text-decoration: underline;
-    }
-
     #whale-content div:last-child {
         color: var(--color_caption2);
         margin-top: 2px;
         line-height: 20px;
     }
 
-    #whale a .circle {
+    #whale .circle {
         position: absolute;
         top: 45%;
         right: 18px;
@@ -2661,8 +2657,8 @@
         margin-top: -5px;
     }
 
-    #whale a .circle::after,
-    #whale a .circle::before {
+    #whale .circle::after,
+    #whale .circle::before {
         content: " ";
         width: 6px;
         height: 6px;
@@ -2672,11 +2668,11 @@
         color: rgba(0, 0, 0, 0);
     }
 
-    #whale a .circle::after {
+    #whale .circle::after {
         margin-left: 4px;
     }
 
-    #whale a .circle::before {
+    #whale .circle::before {
         background-color: #03c75a;
     }
 
@@ -4057,9 +4053,9 @@
                     </section>
                     <section id="whale">
                         <a href="#">
-                            <i></i>
-                            <div class="whale-content">
-                                <div>나만의 스마트한 브라우저 웨일</div>
+                            <img src="./whale.png" alt="웨일브라우저" width="42" height="42">
+                            <div id="whale-content">
+                                <strong>나만의 스마트한 브라우저 웨일</strong>
                                 <div>인터넷을 여는 가장 스마트한 방법</div>
                             </div>
                             <div class="circle"></div>
