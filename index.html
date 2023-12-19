@@ -183,6 +183,7 @@
     }
 
 
+
     #header-Hamburger,
     #header-notice,
     #header-navertalk,
@@ -244,7 +245,6 @@
     }
 
 
-
     #header-Hamburger>div {
         background-position: -82px -329px;
     }
@@ -265,7 +265,14 @@
         top: -3px;
     }
 
-
+    #header .search-ad {
+        display: block;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 162px;
+        height: 40px;
+    }
 
     #search {
         position: absolute;
@@ -385,6 +392,8 @@
         width: 25px;
         height: 25px;
     }
+
+
 
     #nav {
         position: absolute;
@@ -2963,6 +2972,9 @@
 <body>
     <div id="wrap">
         <header id="header">
+            <a href="#this" class="search-ad">
+                <img src="./q.png" alt="큐: 사전신청 오픈!" width="162px" height="40px">
+            </a>
             <button id="header-Hamburger">
                 <!--::before -->
                 <div></div>
@@ -2987,7 +2999,7 @@
                 <span class="blind">네이버페이</span>
                 <!--::after -->
             </button>
-            <search id="search">
+            <div id="search">
                 <form action="">
                     <a id='search-svg' href="https://www.naver.com/">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -3008,7 +3020,8 @@
                         </button>
                     </div>
                 </form>
-            </search>
+
+            </div>
             <nav id="nav">
                 <ul>
                     <li>
