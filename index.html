@@ -1669,8 +1669,8 @@
         vertical-align: top;
     }
 
-    #main-weather-left-right,
-    #main-stock-left-right {
+    #main-weather-content,
+    #main-stock-content {
         border-top: 1px solid var(--color_border_in);
         width: 384px;
         height: 184px;
@@ -1833,7 +1833,6 @@
 
 
 
-
     #main-weather-left .dust {
         display: flex;
         margin-top: 6px;
@@ -1843,15 +1842,18 @@
         justify-content: center
     }
 
+    /*미세먼지 ,초미세 먼지*/
+    #main-weather-left .pollution,
+    #main-weather-left .ultra-pollution {
+        color: #101010;
+    }
+
     #main-weather-left .pollution,
     #main-weather-left .ultra-pollution {
         display: inline-block;
         font-size: 13.65px;
         text-align: center;
     }
-
-
-
 
     #main-weather-left .ultra-pollution::before {
         content: "";
@@ -1861,12 +1863,6 @@
         background-color: var(--color_dot_divider);
         margin: 8px 6px 0;
         border-radius: 50%;
-    }
-
-    /*미세먼지 ,초미세 먼지*/
-    .pollution,
-    .ultra-pollution {
-        color: #101010;
     }
 
     /* 좋음 */
@@ -1943,24 +1939,24 @@
         text-decoration: none;
     }
 
-    .stock-left .USD,
-    .stock-left .rate {
+    #main-stock-left .USD,
+    #main-stock-left .rate {
         color: #101010;
     }
 
 
-    .stock-left .USD {
+    #main-stock-left .USD {
         font-size: 15px;
         height: 19px;
     }
 
-    .stock-left .rate {
+    #main-stock-left .rate {
         font-size: 24px;
         margin-top: 3px;
         line-height: 30px;
     }
 
-    .stock-left .up {
+    #main-stock-left .up {
         color: #f44336;
         font-size: 14px;
         margin: 2px 0 0;
@@ -1968,15 +1964,15 @@
         text-align: left;
     }
 
-    .stock-left .up span {
+    #main-stock-left .up span {
         padding-left: 6px;
     }
 
-    .stock-left .chart {
+    #main-stock-left .chart {
         height: 44px;
     }
 
-    .stock-left .three {
+    #main-stock-left .three {
         color: #606060;
         position: relative;
         top: 10px;
@@ -2020,19 +2016,19 @@
         color: #101010;
     }
 
-    .stock-item {
+    #main-stock-right .stock-item {
         overflow: hidden;
         text-overflow: ellipsis;
         width: 78px;
     }
 
     /* 인기종목 */
-    .stock-item:last-of-type {
+    #main-stock-right .stock-item:last-of-type {
         overflow: visible;
         color: #606060;
     }
 
-    .stock-item:last-of-type::after {
+    #main-stock-right .stock-item:last-of-type::after {
         content: " ";
         display: inline-block;
         background-image: url(./favicon.png);
@@ -2044,13 +2040,13 @@
         height: 12px;
     }
 
-    .price {
+    #main-stock-right .price {
         display: flex;
         justify-content: flex-end;
         width: 61.97px;
     }
 
-    .price i {
+    #main-stock-right .price i {
         background-image: url(./favicon.ico);
         background-size: 433px 412px;
         background-repeat: no-repeat;
@@ -2082,7 +2078,11 @@
         background-color: var(--color_board_bg);
     }
 
-    .widget-head {
+    #widget-content {
+        padding: 15px 18px 20px;
+    }
+
+    #widget-content header {
         color: var(--color_title);
         position: relative;
         padding-bottom: 1px;
@@ -2095,16 +2095,11 @@
         text-align: left;
     }
 
-
-    .widget-content {
-        padding: 15px 18px 20px;
-    }
-
-    .widget-calendar,
-    .widget-memo,
-    .widget-papago,
-    .widget-English,
-    .widget-VIBE {
+    #widget-calendar,
+    #widget-memo,
+    #widget-papago,
+    #widget-English,
+    #widget-VIBE {
         background-color: var(--color_menu_widget_bg);
         float: left;
         width: 186px;
@@ -2114,26 +2109,30 @@
         border-radius: 8px;
     }
 
-    .widget-calendar a:hover,
-    .widget-memo a:hover,
-    .widget-papago a:hover {
-        text-decoration: none;
-    }
-
-    .widget-memo,
-    .widget-English {
+    #widget-memo,
+    #widget-English {
         margin-left: 12px;
     }
 
+    #widget-calendar a:hover,
+    #widget-memo a:hover,
+    #widget-papago a:hover {
+        text-decoration: none;
+    }
 
-    .calendar-slot>span,
-    .widget-memo li span {
+
+    #widget-calendar .box,
+    #widget-memo li span {
         color: var(--color_caption2);
-        text-decoration: underline;
         font-size: 14.7px;
     }
 
-    .calendar-box {
+    #widget-calendar .login,
+    #widget-memo .login {
+        text-decoration: underline;
+    }
+
+    #widget-calendar .calendar-border {
         display: flex;
         flex-direction: column;
         text-align: left;
@@ -2141,73 +2140,68 @@
         height: 192px;
     }
 
-    /* span 캘린더 */
-    .calendar-box>div>span:first-child {
+    #widget-calendar .title {
         color: var(--color_title);
         display: block;
         padding-left: 11px;
-        font-size: 1.5rem;
+        font-size: 15.75px;
         line-height: 34px;
         font-weight: 800;
     }
 
-    .calendar-box>div {
+    #widget-calendar .box {
         display: block;
         position: relative;
-        flex: 1;
-        min-width: 0;
-    }
-
-    .calendar-slot {
         width: 172px;
         height: 132px;
         padding-left: 11px;
-        text-decoration: none;
     }
 
-    .day-box {
-        font-weight: 500;
+    #widget-calendar .day {
+        display: block;
         margin: 8px 0 0 -1px;
-        font-size: 3.9rem;
         line-height: 36px;
+    }
+
+    #widget-calendar .day span:nth-child(1) {
+        display: inline-block;
+        font-size: 40.95px;
         letter-spacing: -2px;
         text-decoration: none;
     }
 
-    .day-box>span {
+    #widget-calendar .day span:nth-child(2) {
         display: inline-block;
         margin: 16px 0 0 9px;
         font-size: 1.3rem;
         line-height: 20px;
     }
 
-    .calendar-slot>span {
+
+    #widget-calendar .login {
         position: absolute;
-        bottom: 10px;
-        left: 11px;
+        bottom: 0px;
         height: 15px;
     }
 
 
-
-    .memo-head {
+    #widget-memo div {
         position: relative;
         display: flex;
         padding: 7px 9px;
         border-radius: 8px 8px 0 0;
         background-image: -webkit-gradient(linear, left bottom, left top, from(#00b869), to(#00c772));
         line-height: 34px;
-
     }
 
-    .memo-head>span {
+    #widget-memo .title {
         padding-left: 10px;
-        font-size: 1.5rem;
+        font-size: 15.75px;
         font-weight: 800;
         color: #fff;
     }
 
-    .memo-head::after {
+    #widget-memo div::after {
         content: "";
         display: block;
         position: absolute;
@@ -2219,36 +2213,36 @@
         background-size: 6px 1px;
     }
 
-    .widget-memo ul {
+    #widget-memo ul {
         list-style: none;
         padding: 0 0 4px;
     }
 
-    .widget-memo li {
+    #widget-memo li {
         height: 46px;
         padding: 0 18px;
         line-height: 46px;
     }
 
-    .widget-memo li:nth-child(2),
-    .widget-memo li:nth-child(3) {
+    #widget-memo li:nth-child(2),
+    #widget-memo li:nth-child(3) {
         height: 46.89px;
         border-top: 1px solid var(--color_border_in_exception);
     }
 
-    .widget-memo li span {
+    #widget-memo .login {
         display: block;
         text-align: left;
         line-height: 43px;
     }
 
 
-    .widget-papago a {
+    #widget-papago a {
         position: relative;
         text-decoration: none;
     }
 
-    .widget-papago>a::before {
+    #widget-papago>a::before {
         content: "";
         display: block;
         position: absolute;
@@ -2263,7 +2257,7 @@
         height: 68px;
     }
 
-    .papago-box {
+    #widget-papago .papago-box {
         display: flex;
         height: 100%;
         padding: 18px 18px 12px 18px;
@@ -2272,7 +2266,7 @@
         justify-content: space-between;
     }
 
-    .papago-box>i {
+    #widget-papago .papago-box>i {
         background-image: url(./favicon.png);
         background-size: 433px 412px;
         background-position: -164px -183px;
@@ -2281,7 +2275,7 @@
         height: 17px;
     }
 
-    .papago-box>div {
+    #widget-papago .papago-box>div {
         position: relative;
         margin: 0 13px;
         border-radius: 20px;
@@ -2294,17 +2288,17 @@
         color: #fff;
     }
 
-    .papago-box>div:hover {
+    #widget-papago .papago-box>div:hover {
         background-color: #1280e2;
     }
 
-    .widget-English>div {
+    #widget-English .English-border {
         position: relative;
         height: 100%;
         text-align: left;
     }
 
-    .widget-English>div::before {
+    #widget-English .English-border::before {
         content: "";
         display: block;
         position: absolute;
@@ -2316,24 +2310,24 @@
         box-shadow: 0 0 0 1px #ebebeb, 1px 0 2px 0 rgba(0, 0, 0, .04);
     }
 
-    .English-head {
-        color: #080808;
+    #widget-English .English-header {
         color: var(--color_title);
         display: block;
         padding: 16px 18px 19px;
-        font-size: 1.5rem;
+        height: 55px;
         line-height: 20px;
+        font-size: 1.5rem;
         font-weight: 800;
     }
 
-    .English-content {
+    #widget-English .English-content {
         position: relative;
         display: block;
         height: 106px;
         text-decoration: none;
     }
 
-    .English-content::after {
+    #widget-English .English-content::before {
         content: " ";
         display: block;
         position: absolute;
@@ -2345,7 +2339,7 @@
         background: radial-gradient(circle at bottom, #e8effb 1px, transparent 0) top/1px 21px;
     }
 
-    .English-text {
+    #widget-English .English-text {
         position: absolute;
         top: 0;
         right: 0;
@@ -2354,27 +2348,24 @@
     }
 
 
-    .English-text>div {
-        overflow: hidden;
+    #widget-English .English-text strong {
         display: -webkit-box;
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
-        max-height: 105px;
+        height: 105px;
         line-height: 21px;
-        text-overflow: ellipsis;
         position: relative;
         font-size: 1.7rem;
-        font-weight: bold;
         word-wrap: break-word;
         letter-spacing: -0.2px;
     }
 
-    .korean-text,
-    .English-content:hover .English-text {
+    #widget-English .korean-text,
+    #widget-English .English-content:hover .English-text {
         display: none;
     }
 
-    .English-content:hover .korean-text {
+    #widget-English .English-content:hover .korean-text {
         position: absolute;
         top: -2px;
         right: 0;
@@ -2388,7 +2379,7 @@
         font-weight: 600;
     }
 
-    .English-search {
+    #widget-English .English-search {
         position: absolute;
         right: 14px;
         bottom: 12px;
@@ -2401,33 +2392,30 @@
         text-decoration: none;
     }
 
-    .English-search:hover {
+    #widget-English .English-search:hover {
         background-color: var(--color_dic);
         border: 1px solid var(--color_dic);
-        min-width: 122px;
         width: 130px;
         height: 40px;
         padding: 0 9px 0 14px;
         border-radius: 20px;
-        box-sizing: border-box;
         white-space: nowrap;
     }
 
-    .English-search span {
+    #widget-English .English-search b {
         position: relative;
         display: none;
     }
 
-    .English-search:hover span {
+    #widget-English .English-search:hover b {
         display: inline-block;
-
         font-size: 1.3rem;
         line-height: 39px;
         font-weight: bold;
         color: #fff;
     }
 
-    .English-search::before {
+    #widget-English .English-search::before {
         content: " ";
         display: block;
         position: absolute;
@@ -2440,7 +2428,7 @@
         margin: 7px;
     }
 
-    .English-search:hover::after {
+    #widget-English .English-search:hover::after {
         content: " ";
         display: inline-block;
         background-image: url(./favicon.png);
@@ -2455,23 +2443,19 @@
         margin: 9px 0 0 3px;
     }
 
-    .widget-VIBE {
+    #widget-VIBE {
         margin: 12px 0 0 0;
         width: 384px;
         height: 278px;
     }
 
-    .widget-VIBE>div {
-        width: 366px;
-        height: 260px;
-    }
-
-    .VIBE-head {
+    #widget-VIBE header {
         display: flex;
         padding: 15px 18px 0;
+        height: 37px;
     }
 
-    .VIBE-head i {
+    #widget-VIBE header i {
         background-image: url(./favicon.png);
         background-size: 433px 412px;
         background-position: -69px -254px;
@@ -2482,22 +2466,25 @@
         margin: 2px 8px 0 0;
     }
 
-    .VIBE-head div {
+    #widget-VIBE header div {
         color: var(--color_title);
         font-size: 1.5rem;
         line-height: 22px;
         font-weight: 800;
     }
 
-    .VIBE-content ul {
-        display: flex;
-        overflow: hidden;
+    #VIBE-content {
         width: 366px;
         height: 210px;
         margin: 13px 0 18px 18px
     }
 
-    .VIBE-content li {
+    #VIBE-content ul {
+        display: flex;
+        overflow: hidden;
+    }
+
+    #VIBE-content li {
         list-style: none;
         position: relative;
         width: 108px;
@@ -2505,11 +2492,11 @@
         margin-left: 12px;
     }
 
-    .VIBE-content li:nth-of-type(1) {
+    #VIBE-content li:nth-of-type(1) {
         margin-left: 0px;
     }
 
-    .VIBE-content li>a {
+    #VIBE-content li>a {
         position: relative;
         display: block;
         width: 108px;
@@ -2518,20 +2505,20 @@
         overflow: hidden;
     }
 
-    .VIBE-content li img {
+    #VIBE-content li img {
         width: 108px;
         height: 162px;
         background-size: 108px 162px;
         background-repeat: no-repeat;
     }
 
-    .VIBE-content img:hover {
+    #VIBE-content img:hover {
         transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
         transform: scale(1.02);
         overflow: hidden;
     }
 
-    .VIBE-content i {
+    #VIBE-content i {
         position: absolute;
         right: 8px;
         bottom: 8px;
@@ -2541,7 +2528,7 @@
         background-color: rgba(0, 0, 0, .5);
     }
 
-    .VIBE-content i::before {
+    #VIBE-content i::before {
         content: "";
         display: block;
         position: absolute;
@@ -2555,7 +2542,7 @@
     }
 
 
-    .VIBE-content a i::after {
+    #VIBE-content a i::after {
         content: "";
         display: block;
         position: absolute;
@@ -2563,7 +2550,7 @@
         border-radius: inherit;
     }
 
-    .VIBE-content a:nth-of-type(2) span {
+    #VIBE-content a:nth-of-type(2) span {
         display: -webkit-box;
         overflow: hidden;
         width: 108px;
@@ -2578,7 +2565,7 @@
     }
 
 
-    .m-naver {
+    #m-naver {
         display: inline-block;
         position: relative;
         margin-bottom: -15px;
@@ -2589,12 +2576,12 @@
         text-align: left;
     }
 
-    .m-naver a {
+    #m-naver a {
         font-size: 14.7px;
         vertical-align: top;
     }
 
-    .m-naver::before {
+    #m-naver::before {
         content: "";
         display: inline-block;
         width: 22px;
@@ -2606,8 +2593,7 @@
         background-repeat: no-repeat;
     }
 
-
-    .m-naver::after {
+    #m-naver::after {
         content: " ";
         display: block;
         position: absolute;
@@ -2642,12 +2628,12 @@
         margin-right: 12px;
     }
 
-    .whale-content {
+    #whale-content {
         flex: 1;
         display: inline-block;
     }
 
-    .whale-content div {
+    #whale-content div {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -2657,8 +2643,7 @@
     }
 
 
-
-    .whale-content div:last-child {
+    #whale-content div:last-child {
         color: var(--color_caption2);
         margin-top: 2px;
         line-height: 20px;
@@ -2683,11 +2668,11 @@
         color: rgba(0, 0, 0, 0);
     }
 
-    #whale>a .circle::after {
+    #whale a .circle::after {
         margin-left: 4px;
     }
 
-    #whale>a .circle::before {
+    #whale a .circle::before {
         background-color: #03c75a;
     }
 
@@ -3893,7 +3878,7 @@
                             <button><a href="#">예보 비교</a></button>
                             <span>대구광역시 북구</span>
                         </header>
-                        <div id="main-weather-left-right">
+                        <div id="main-weather-content">
                             <div id="main-weather-left">
                                 <a href="#">
                                     <div class="sch-border">
@@ -3923,13 +3908,12 @@
                             <span>11.27. 17:44</span>
                             <button><span class="blind">새로고침</span></button>
                         </header>
-                        <div id="main-weather-left-right">
+                        <div id="main-stock-content">
                             <div id="main-stock-left">
-                                <a href="#" class="stock-left">
+                                <a href="#">
                                     <div class="USD">환율 USD</div>
                                     <div class="rate">1,302.00</div>
-                                    <div class="up">▲1.00<span>+0.08%</span>
-                                    </div>
+                                    <div class="up">▲1.00<span>+0.08%</span></div>
                                     <div>
                                         <img src="./stock.png" alt="환율 3개월 차트" class="chart">
                                         <span class="three">3개월차트</span>
@@ -3968,35 +3952,33 @@
                         </div>
                     </section>
                     <section id="widget">
-                        <div class="widget-content">
-                            <div class="widget-head">위젯 보드</div>
-                            <div class="widget-calendar"><!-- 캘린더 -->
-                                <a href="#" class="calendar-box">
-                                    <div>
-                                        <span>캘린더</span>
-                                        <div class="calendar-slot">
-                                            <div class="day-box">12.4<!--
-                                            --><span>월</span>
-                                            </div>
-                                            <span>로그인하기</span>
+                        <div id="widget-content">
+                            <header>위젯 보드</header>
+                            <div id="widget-calendar"><!-- 캘린더 -->
+                                <a href="#">
+                                    <div class="calendar-border">
+                                        <span class="title">캘린더</span>
+                                        <div class="box">
+                                            <span class="day">
+                                                <span>12.4</span><span>월</span>
+                                            </span>
+                                            <span class="login">로그인하기</span>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                             </a>
-                            <div class="widget-memo"><!-- 메모 -->
+                            <div id="widget-memo"><!-- 메모 -->
                                 <a href="#">
-                                    <div class="memo-head"><!--
-                                        --><span>메모</span>
-                                    </div>
+                                    <div><span class="title">메모</span></div>
+                                    <ul>
+                                        <li></li>
+                                        <li></li>
+                                        <li><span class="login">로그인하기</span></li>
+                                    </ul>
                                 </a>
-                                <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li><span>로그인하기</span></li>
-                                </ul>
                             </div>
-                            <div class="widget-papago"><!-- 파파고 -->
+                            <div id="widget-papago"><!-- 파파고 -->
                                 <a href="#">
                                     <div class="papago-box">
                                         <i><span class="blind">papago</span></i>
@@ -4004,67 +3986,67 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="widget-English"><!-- 영어사전 -->
-                                <div>
-                                    <a href="#" class="English-head">영어사전</a>
+                            <div id="widget-English"><!-- 영어사전 -->
+                                <div class="English-border">
+                                    <a href="#" class="English-header">
+                                        <span>영어사전</span>
+                                    </a>
                                     <a href="#" class="English-content">
                                         <div class="English-text">
-                                            <div>What are your strengths?</div>
+                                            <strong>What are your strengths?</strong>
                                         </div>
                                         <div class="korean-text">당신의 강점은 무엇입니까?</div>
                                     </a>
                                     <a href="#" class="English-search">
-                                        <span>단어 검색하기</span>
+                                        <b>단어 검색하기</b>
                                     </a>
                                 </div>
                             </div>
-                            <div class="widget-VIBE"><!-- vibe-->
-                                <div>
-                                    <div class="VIBE-head">
-                                        <i><span class="blind">VIBE</span></i>
-                                        <div>쉼이 있는 자연의 풍경</div>
-                                    </div>
-                                    <div class="VIBE-content">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <img src="./VIBE/VIBE-content-li-1.png" alt="다산초당">
-                                                    <i></i>
-                                                    <span class="blind">재생</span>
-                                                </a>
-                                                <a href="#"><span>다산초당으로 불어오는 바람 소리</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img src="./VIBE/VIBE-content-li-2.png" alt="협재 해수욕장">
-                                                    <i></i>
-                                                    <span class="blind">재생</span>
-                                                </a>
-                                                <a href="#"><span>은모래빛 협재 해수욕장</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img src="./VIBE/VIBE-content-li-3.png" alt="붉은 낙조와 잔잔한 파도">
-                                                    <i></i>
-                                                    <span class="blind">재생</span>
-                                                </a>
-                                                <a href="#"><span>붉은 낙조와 잔잔한 파도</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img src="./VIBE/VIBE-content-li-4.png" alt="우포늪">
-                                                    <i></i>
-                                                    <span class="blind">재생</span>
-                                                </a>
-                                                <a href="#"><span>우포늪의 은은한 소리</span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                            <div id="widget-VIBE"><!-- vibe-->
+                                <header>
+                                    <i><span class="blind">VIBE</span></i>
+                                    <div>쉼이 있는 자연의 풍경</div>
+                                </header>
+                                <div id="VIBE-content">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="./VIBE/VIBE-content-li-1.png" alt="다산초당">
+                                                <i></i>
+                                                <span class="blind">재생</span>
+                                            </a>
+                                            <a href="#"><span>다산초당으로 불어오는 바람 소리</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="./VIBE/VIBE-content-li-2.png" alt="협재 해수욕장">
+                                                <i></i>
+                                                <span class="blind">재생</span>
+                                            </a>
+                                            <a href="#"><span>은모래빛 협재 해수욕장</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="./VIBE/VIBE-content-li-3.png" alt="붉은 낙조와 잔잔한 파도">
+                                                <i></i>
+                                                <span class="blind">재생</span>
+                                            </a>
+                                            <a href="#"><span>붉은 낙조와 잔잔한 파도</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="./VIBE/VIBE-content-li-4.png" alt="우포늪">
+                                                <i></i>
+                                                <span class="blind">재생</span>
+                                            </a>
+                                            <a href="#"><span>우포늪의 은은한 소리</span></a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="m-naver"><!--모바일-->
+                            <div id="m-naver"><!--모바일-->
                                 <a href="#this">
-                                    <span class="bold">모바일 네이버 메인</span> 열기
+                                    <strong>모바일 네이버 메인</strong> 열기
                                 </a>
                             </div>
                         </div>
@@ -4072,8 +4054,8 @@
                     <section id="whale">
                         <a href="#">
                             <img src="./whale.png" width="42px" height="42px">
-                            <div class="whale-content">
-                                <div class="bold">나만의 스마트한 브라우저 웨일</div>
+                            <div id="whale-content">
+                                <div><strong>나만의 스마트한 브라우저 웨일</strong></div>
                                 <div>인터넷을 여는 가장 스마트한 방법</div>
                             </div>
                             <div class="circle"></div>
@@ -4082,6 +4064,7 @@
                 </div>
             </main>
         </div>
+    </div>
     </div>
     <footer id="footer">
         <div id="footer-content">
