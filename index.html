@@ -2512,9 +2512,9 @@
         background-repeat: no-repeat;
     }
 
-    #VIBE-content img:hover {
-        transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        transform: scale(1.02);
+    .VIBE-content img:hover {
+        transition: transform .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transform: scale(1.06);
         overflow: hidden;
     }
 
@@ -2565,7 +2565,8 @@
     }
 
 
-    #m-naver {
+    .m-naver {
+        position: relative;
         display: inline-block;
         position: relative;
         margin-bottom: -15px;
@@ -2642,6 +2643,9 @@
         text-align: start;
     }
 
+    .whale-content div:hover {
+        text-decoration: underline;
+    }
 
     #whale-content div:last-child {
         color: var(--color_caption2);
@@ -4053,9 +4057,9 @@
                     </section>
                     <section id="whale">
                         <a href="#">
-                            <img src="./whale.png" width="42px" height="42px">
-                            <div id="whale-content">
-                                <div><strong>나만의 스마트한 브라우저 웨일</strong></div>
+                            <i></i>
+                            <div class="whale-content">
+                                <div>나만의 스마트한 브라우저 웨일</div>
                                 <div>인터넷을 여는 가장 스마트한 방법</div>
                             </div>
                             <div class="circle"></div>
