@@ -97,6 +97,53 @@
         padding: 0;
     }
 
+    html,
+    body {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+    #wrap {
+        min-width: 1340px;
+        text-align: center;
+    }
+
+    #header {
+        position: relative;
+        margin: 0 auto;
+        padding: 70px 0 22px;
+        width: 1280px;
+        height: 268px;
+        text-align: left;
+    }
+
+    #main {
+        margin: 0 auto;
+        width: 1280px;
+    }
+
+    #footer {
+        width: 100%;
+        background-color: #f5f6f7;
+        text-align: left;
+    }
+
+
+
+    aside[id$=ad] {
+        margin-bottom: 16px;
+        border-radius: 8px;
+    }
+
+    section[id^=main] {
+        margin-bottom: 16px;
+        box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0, 0, 0, .04);
+        border-radius: 8px;
+    }
+
     a,
     a:hover,
     a:visited {
@@ -134,44 +181,6 @@
         vertical-align: -1px;
         background-color: var(--color_dot_divider);
     }
-
-    aside[id$=ad] {
-        margin-bottom: 16px;
-        border-radius: 8px;
-    }
-
-    section[id^=main] {
-        margin-bottom: 16px;
-        box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0, 0, 0, .04);
-        border-radius: 8px;
-    }
-
-    html,
-    body {
-        margin: auto;
-        width: 100%;
-        height: 100%;
-    }
-
-    #wrap {
-        min-width: 1340px;
-        text-align: center;
-    }
-
-    #wrap-center {
-        margin: 0 auto;
-        width: 1280px;
-    }
-
-    #header {
-        position: relative;
-        margin: 0 auto;
-        padding: 70px 0 22px;
-        width: 1280px;
-        height: 268px;
-        text-align: left;
-    }
-
 
 
     #header-Hamburger,
@@ -535,7 +544,7 @@
         margin-left: 2.6px;
     }
 
-    #main {
+    #main-middle {
         display: flex;
         position: relative;
         padding-bottom: 60px;
@@ -614,7 +623,6 @@
         line-height: 20px;
         text-align: center;
         vertical-align: top;
-
     }
 
     #main-login-button {
@@ -625,6 +633,7 @@
         box-shadow: 0 2px 4px 0 rgba(3, 199, 90, .12);
         background-color: #03c75a;
         color: white;
+        text-decoration: none;
     }
 
     #main-login-button:hover {
@@ -866,21 +875,19 @@
         color: #9858F5
     }
 
-    .page .first,
-    .page .last {
+    #main-shopping-gray .page .first,
+    #main-shopping-gray .page .last {
         font-size: 1.3rem;
         line-height: 16px;
         font-weight: 600;
         vertical-align: middle;
     }
 
-    .page .last {
+    #main-shopping-gray .page .last {
         color: rgba(113, 113, 113, .6);
     }
 
-
-    /* gray > way > prev,next */
-    .page button {
+    #main-shopping-gray .page button {
         width: 30px;
         height: 30px;
         position: relative;
@@ -891,7 +898,7 @@
         background-color: #fbfbfc;
     }
 
-    .page button::before {
+    #main-shopping-gray .page button::before {
         content: "";
         position: absolute;
         padding: 0px;
@@ -903,13 +910,13 @@
         border-bottom: 2px solid #80868c;
     }
 
-    .page .prev::before {
+    #main-shopping-gray .page .prev::before {
         margin-left: 1px;
         transform: translate(-50%, -50%) rotate(45deg);
     }
 
 
-    .page .next::before {
+    #main-shopping-gray .page .next::before {
         margin-left: -1px;
         transform: translate(-50%, -50%) rotate(-135deg);
     }
@@ -1437,7 +1444,7 @@
         font-weight: bold;
     }
 
-
+    /* main-recommend-grid,main-recommend-grid-2 */
     .recommend-grid-same {
         display: grid;
         grid-template: repeat(3, 1fr) / repeat(4, 1fr);
@@ -1445,7 +1452,6 @@
         width: 790px;
         align-content: center;
     }
-
 
     .recommend-grid-same a {
         display: block;
@@ -2512,7 +2518,7 @@
         background-repeat: no-repeat;
     }
 
-    .VIBE-content img:hover {
+    #VIBE-content img:hover {
         transition: transform .4s cubic-bezier(0.165, 0.84, 0.44, 1);
         transform: scale(1.06);
         overflow: hidden;
@@ -2685,13 +2691,6 @@
         letter-spacing: -0.5px;
     }
 
-
-    #footer {
-        width: 100%;
-        background-color: #f5f6f7;
-    }
-
-
     #footer-content {
         width: 1280px;
         margin: 0 auto;
@@ -2705,7 +2704,7 @@
         justify-content: flex-start;
     }
 
-    .banner {
+    #banner .banner-border {
         display: flex;
         width: 410px;
         height: 100px;
@@ -2716,7 +2715,7 @@
         background-color: #f5f6f7;
     }
 
-    .banner-ad-box {
+    #banner .banner-ad-box {
         overflow: hidden;
         position: relative;
         width: 160px;
@@ -2724,16 +2723,16 @@
         border-radius: 6px;
     }
 
-    .banner2 {
+    #banner .banner2 {
         margin-left: 22px;
     }
 
-    .banner3 {
+    #banner .banner3 {
         margin-left: 15px;
     }
 
 
-    .banner-ad-box img {
+    #banner .banner-ad-box img {
         display: block;
         float: left;
         width: 160px;
@@ -2745,12 +2744,12 @@
         transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1)
     }
 
-    .banner:hover .banner-ad-box img {
+    #banner .banner-border:hover .banner-ad-box img {
         transition: transform .4s cubic-bezier(0.165, 0.84, 0.44, 1);
         transform: scale(1.03);
     }
 
-    .ad-button2 {
+    #banner .ad-button2 {
         display: block;
         width: 25px;
         height: 16px;
@@ -2764,7 +2763,7 @@
         z-index: 1;
     }
 
-    .ad-button2::after {
+    #banner .ad-button2::after {
         position: absolute;
         top: 0;
         right: 0;
@@ -2775,7 +2774,7 @@
         content: " ";
     }
 
-    .banner-text-box {
+    #banner .banner-text-box {
         float: right;
         overflow: hidden;
         width: 250px;
@@ -2783,7 +2782,7 @@
         padding: 5px 3px 0 18px;
     }
 
-    .banner-text-box .bold:nth-child(1) {
+    #banner .banner-text-box .bold:nth-child(1) {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -2800,7 +2799,7 @@
         background-color: #a0adb2;
     }
 
-    .banner-text-box .bold:nth-child(2) {
+    #banner .banner-text-box .bold:nth-child(2) {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -2811,7 +2810,7 @@
         color: #222122;
     }
 
-    .banner-text-box .text {
+    #banner .banner-text-box .text {
         display: block;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -2822,20 +2821,19 @@
         letter-spacing: -0.7px;
     }
 
-    .banner:hover {
+    #banner .banner-border:hover {
         text-decoration: none;
     }
 
-
-    .banner:hover .bold2 {
+    #banner .banner-border:hover .bold2 {
         text-decoration: underline;
     }
 
-    .banner-text-box .text1 {
+    #banner .banner-text-box .text1 {
         margin-top: 6px
     }
 
-    .title {
+    #banner .title {
         font-size: 13.65px;
         color: #101010;
         font-weight: bold;
@@ -2848,12 +2846,12 @@
         justify-content: space-between;
     }
 
-    .notice-block {
+    #notice .notice-box {
         height: 17px;
         color: var(--color_caption1);
     }
 
-    .notice-block .title {
+    #notice .notice-box .title {
         margin-right: 11px;
     }
 
@@ -2906,31 +2904,31 @@
         font-size: 1.3rem;
     }
 
-    .service-border {
+    #service .service-border {
         display: flex;
     }
 
-    .service-border1 {
+    #service .service-border1 {
         float: left;
     }
 
-    .service-border2 {
+    #service .service-border2 {
         float: right;
     }
 
-    .service-border .bold,
-    .service-border .service-url {
+    #service .service-border .bold,
+    #service .service-border .service-url {
         display: block;
         padding-top: 5px;
     }
 
-    .service-whale {
+    #service .service-whale {
         margin: 0 61px 0 34px;
         width: 48px;
         height: 48px;
     }
 
-    .service-flower {
+    #service .service-flower {
         width: 47px;
         height: 50px;
         margin: -1px 0 0 41px;
@@ -2964,7 +2962,7 @@
 
 <body>
     <div id="wrap">
-        <div id="header">
+        <header id="header">
             <button id="header-Hamburger">
                 <!--::before -->
                 <div></div>
@@ -3075,8 +3073,8 @@
                     </li>
                 </ul>
             </nav>
-        </div>
-        <div id="wrap-center">
+        </header>
+        <main id="main">
             <aside id="main-top-ad">
                 <a href="https://velog.io/redius01" target="_blank" class="left-ad">
                     <span class="blind">디테일에 빠진 이시연, 웹사이트를 더욱 완성도 높게 만듭니다.</span>
@@ -3086,7 +3084,7 @@
                     <span class="blind">광고 동영상 보기</span>
                 </a>
             </aside>
-            <main id="main">
+            <div id="main-middle">
                 <div id="main-left">
                     <section id="main-newsstand" class="left-section">
                         <div id="main-newsstand-top">
@@ -3865,7 +3863,10 @@
                 <div id="main-right">
                     <section id="main-login">
                         <div>네이버를 더 안전하고 편리하게 이용하세요</div>
-                        <a href="#" id=main-login-button><!----><i></i><!----><span>로그인</span></a>
+                        <a href="#" id=main-login-button><!--
+                          --><i></i><!--
+                          --><span>로그인</span>
+                        </a>
                         <div>
                             <a href="#">아이디 찾기</a>
                             <a href="#">비밀번호 찾기</a>
@@ -4062,137 +4063,136 @@
                         </a>
                     </section>
                 </div>
-            </main>
-        </div>
-    </div>
-    </div>
-    <footer id="footer">
-        <div id="footer-content">
-            <span class="blind">네이버 푸터</span>
-            <div id="banner">
-                <a href="#" class="banner banner1">
-                    <div class="banner-ad-box">
-                        <img src="./footer-ad-1.jpg" alt="초록우산 기부반지 받기">
-                        <i class="ad-button2">
-                            <span class="blind">AD, 광고 닫기</span>
-                        </i>
-                    </div>
-                    <div class="banner-text-box">
-                        <span class="bold">초록우산</span>
-                        <span class="bold bold2">제이에스티나 해피니스링</span>
-                        <span class="text text1">월 1만원 후원하고</span>
-                        <span class="text">기부반지 받기</span>
-                    </div>
-                </a>
-                <a href="#" class="banner banner2">
-                    <div class="banner-ad-box">
-                        <img src="./footer-ad-2.jpg" alt="해피빈 굿액션">
-                    </div>
-                    <div class="banner-text-box">
-                        <span class="bold">네이버 해피빈 굿액션</span>
-                        <span class="bold bold2">대지진 그 후, 궁금하셨죠?</span>
-                        <span class="text text1">튀르키예·시리아 소식 듣고</span>
-                        <span class="text">기부특콩대 톡톡 알림 혜택까지</span>
-                    </div>
-                </a>
-                <a href="#" class="banner banner3">
-                    <div class="banner-ad-box">
-                        <img src="./footer-ad-3.png" alt="블록코딩 창작 공간">
-                    </div>
-                    <div class="banner-text-box">
-                        <span class="bold">네이버 커넥트재단</span>
-                        <span class="bold bold2">엔트리 탐험하기</span>
-                        <span class="text text1">블록 코딩으로 커뮤니케이션하는</span>
-                        <span class="text">10대들의 새로운 창작 공간</span>
-                    </div>
-                </a>
             </div>
-            <section id="notice">
-                <div class="notice-block">
-                    <a href="#" class="title">공지사항</a>
-                    <a href="#">네이버 ‘개인정보 처리방침’ 변경에 대한 안내 말씀드립니다.</a>
-                </div>
-                <a href="#" class="bold">서비스 전체보기</a>
-            </section>
-            <section id="side">
-                <div id="resource">
-                    <div>
-                        <span class="bold">Creators</span>
-                        <a href="#">크리에이터</a>
-                        <a href="#" class="pipe">스몰비즈니스</a>
-                    </div>
-                    <div>
-                        <span class="bold">Partners</span>
-                        <a href="#">SME 풀케어 시스템</a>
-                        <a href="#" class="pipe">비즈니스 · 광고</a>
-                        <a href="#" class="pipe">스토어 개설</a>
-                        <a href="#" class="pipe">지역업체 등록</a>
-                        <a href="#" class="pipe">엑스퍼트 등록</a>
-                    </div>
-                    <div>
-                        <span class="bold">Developers</span>
-                        <a href="#">네이버 개발자 센터</a>
-                        <a href="#" class="pipe">오픈 API</a>
-                        <a href="#" class="pipe">오픈소스</a>
-                        <a href="#" class="pipe">네이버 D2</a>
-                        <a href="#" class="pipe">네이버 D2SF</a>
-                        <a href="#" class="pipe">네이버 랩스</a>
-                    </div>
-                </div>
-                <div id="service">
-                    <div class="service-border service-border1">
-                        <div>
-                            <span class="bold">웨일브라우저</span><br>
-                            <a href="#" class="service-url">이용안내</a>
+        </main>
+        <footer id="footer">
+            <div id="footer-content">
+                <span class="blind">네이버 푸터</span>
+                <section id="banner">
+                    <a href="#" class="banner-border banner1">
+                        <div class="banner-ad-box">
+                            <img src="./footer-ad-1.jpg" alt="초록우산 기부반지 받기">
+                            <i class="ad-button2">
+                                <span class="blind">AD, 광고 닫기</span>
+                            </i>
                         </div>
-                        <a href="#" class="service-whale">
-                            <img src="./whale2.png" alt="웨일브라우저" width="48px" height="50px"> </a>
-                    </div>
-                    <div class="service-border service-border2">
-                        <div>
-                            <span class=" bold">프로젝트꽃</span><br>
-                            <a href="#" class="service-url">바로가기</a>
+                        <div class="banner-text-box">
+                            <span class="bold">초록우산</span>
+                            <span class="bold bold2">제이에스티나 해피니스링</span>
+                            <span class="text text1">월 1만원 후원하고</span>
+                            <span class="text">기부반지 받기</span>
                         </div>
-                        <a href="#" class="service-flower">
-                            <img src="./flower.png" alt="프로젝트꽃" width="47px" height="50px">
-                        </a>
+                    </a>
+                    <a href="#" class="banner-border banner2">
+                        <div class="banner-ad-box">
+                            <img src="./footer-ad-2.jpg" alt="해피빈 굿액션">
+                        </div>
+                        <div class="banner-text-box">
+                            <span class="bold">네이버 해피빈 굿액션</span>
+                            <span class="bold bold2">대지진 그 후, 궁금하셨죠?</span>
+                            <span class="text text1">튀르키예·시리아 소식 듣고</span>
+                            <span class="text">기부특콩대 톡톡 알림 혜택까지</span>
+                        </div>
+                    </a>
+                    <a href="#" class="banner-border banner3">
+                        <div class="banner-ad-box">
+                            <img src="./footer-ad-3.png" alt="블록코딩 창작 공간">
+                        </div>
+                        <div class="banner-text-box">
+                            <span class="bold">네이버 커넥트재단</span>
+                            <span class="bold bold2">엔트리 탐험하기</span>
+                            <span class="text text1">블록 코딩으로 커뮤니케이션하는</span>
+                            <span class="text">10대들의 새로운 창작 공간</span>
+                        </div>
+                    </a>
+                </section>
+                <section id="notice">
+                    <div class="notice-box">
+                        <a href="#" class="title">공지사항</a>
+                        <a href="#">네이버 ‘개인정보 처리방침’ 변경에 대한 안내 말씀드립니다.</a>
                     </div>
-                </div>
-            </section>
-            <section id="company">
-                <span class="blind"></span>
-                <ul>
-                    <li>
-                        <a href=#this>회사소개</a>
-                    </li>
-                    <li class="pipe">
-                        <a href=#this>인재채용</a>
-                    </li>
-                    <li class="pipe">
-                        <a href=#this>제휴제안</a>
-                    </li>
-                    <li class="pipe">
-                        <a href=#this>이용약관</a>
-                    </li>
-                    <li class="pipe bold">
-                        <a href=#this>개인정보처리방침</a>
-                    </li>
-                    <li class="pipe">
-                        <a href=#this>청소년보호정책</a>
-                    </li>
-                    <li class="pipe">
-                        <a href=#this>네이버 정책</a>
-                    </li>
-                    <li class="pipe">
-                        <a href=#this>고객센터</a>
-                    </li>
-                </ul>
-                <div>
-                    <a href="#">ⓒ NAVER Corp.</a>
-                </div>
-            </section>
-        </div>
-    </footer>
+                    <a href="#" class="bold">서비스 전체보기</a>
+                </section>
+                <section id="side">
+                    <div id="resource">
+                        <div>
+                            <span class="bold">Creators</span>
+                            <a href="#">크리에이터</a>
+                            <a href="#" class="pipe">스몰비즈니스</a>
+                        </div>
+                        <div>
+                            <span class="bold">Partners</span>
+                            <a href="#">SME 풀케어 시스템</a>
+                            <a href="#" class="pipe">비즈니스 · 광고</a>
+                            <a href="#" class="pipe">스토어 개설</a>
+                            <a href="#" class="pipe">지역업체 등록</a>
+                            <a href="#" class="pipe">엑스퍼트 등록</a>
+                        </div>
+                        <div>
+                            <span class="bold">Developers</span>
+                            <a href="#">네이버 개발자 센터</a>
+                            <a href="#" class="pipe">오픈 API</a>
+                            <a href="#" class="pipe">오픈소스</a>
+                            <a href="#" class="pipe">네이버 D2</a>
+                            <a href="#" class="pipe">네이버 D2SF</a>
+                            <a href="#" class="pipe">네이버 랩스</a>
+                        </div>
+                    </div>
+                    <div id="service">
+                        <div class="service-border service-border1">
+                            <div>
+                                <span class="bold">웨일브라우저</span><br>
+                                <a href="#" class="service-url">이용안내</a>
+                            </div>
+                            <a href="#" class="service-whale">
+                                <img src="./whale2.png" alt="웨일브라우저" width="48px" height="50px"> </a>
+                        </div>
+                        <div class="service-border service-border2">
+                            <div>
+                                <span class=" bold">프로젝트꽃</span><br>
+                                <a href="#" class="service-url">바로가기</a>
+                            </div>
+                            <a href="#" class="service-flower">
+                                <img src="./flower.png" alt="프로젝트꽃" width="47px" height="50px">
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section id="company">
+                    <span class="blind"></span>
+                    <ul>
+                        <li>
+                            <a href=#this>회사소개</a>
+                        </li>
+                        <li class="pipe">
+                            <a href=#this>인재채용</a>
+                        </li>
+                        <li class="pipe">
+                            <a href=#this>제휴제안</a>
+                        </li>
+                        <li class="pipe">
+                            <a href=#this>이용약관</a>
+                        </li>
+                        <li class="pipe bold">
+                            <a href=#this>개인정보처리방침</a>
+                        </li>
+                        <li class="pipe">
+                            <a href=#this>청소년보호정책</a>
+                        </li>
+                        <li class="pipe">
+                            <a href=#this>네이버 정책</a>
+                        </li>
+                        <li class="pipe">
+                            <a href=#this>고객센터</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <a href="#">ⓒ NAVER Corp.</a>
+                    </div>
+                </section>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
