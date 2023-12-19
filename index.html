@@ -569,14 +569,34 @@
 
     #main-top-ad>.left-ad {
         display: block;
-        width: 580px;
-        margin-left: 305px;
-        height: 120px;
         padding-top: 40px;
+        margin-left: 305px;
+        width: 580px;
+        height: 120px;
         border-radius: 8px;
         background-image: url(./detail.png);
         background-repeat: no-repeat;
         box-shadow: 0 5px 5px -3px rgb(0 0 0 / 30%);
+    }
+
+    #main-top-ad>.left-ad:before,
+    #main-top-ad>.left-ad::after {
+        content: " ";
+        display: block;
+        position: absolute;
+        right: 0px;
+        left: 0px;
+        height: 2px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4) 90%, transparent 10%);
+        background-size: 15px 2px;
+    }
+
+    #main-top-ad>.left-ad:before {
+        bottom: 5px;
+    }
+
+    #main-top-ad>.left-ad::after {
+        top: 5px;
     }
 
     #main-top-ad .right-ad {
