@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="./footer-ad-1.jpg">
     <title>NAVER</title>
 </head>
 
@@ -184,10 +181,7 @@
 
 
 
-    #header-Hamburger,
-    #header-notice,
-    #header-navertalk,
-    #header-pay {
+    .header-button {
         display: block;
         position: absolute;
         top: 18px;
@@ -199,10 +193,7 @@
         cursor: pointer;
     }
 
-    #header-Hamburger:hover::before,
-    #header-navertalk:hover::before,
-    #header-notice:hover::before,
-    #header-pay:hover::before {
+    .header-button:hover::before {
         position: absolute;
         content: '';
         z-index: 0;
@@ -214,10 +205,7 @@
         border-radius: 50%;
     }
 
-    #header-Hamburger>div,
-    #header-navertalk>div,
-    #header-notice>div,
-    #header-pay>div {
+    .header-button>div {
         position: relative;
         width: 26px;
         height: 26px;
@@ -265,7 +253,7 @@
         top: -3px;
     }
 
-    #header .search-ad {
+    #header-right-ad {
         display: block;
         position: absolute;
         top: 80px;
@@ -2992,31 +2980,31 @@
 <body>
     <div id="wrap">
         <header id="header">
-            <a href="#this" class="search-ad">
+            <a href="#" id="header-right-ad">
                 <img src="./q.png" alt="큐: 사전신청 오픈!" width="162px" height="40px">
             </a>
-            <button id="header-Hamburger">
+            <button id="header-Hamburger" class="header-button">
                 <!--::before -->
                 <div></div>
                 <span class="blind">확장 영역</span>
                 <!--::after -->
             </button>
-            <button id="header-navertalk">
+            <button id="header-pay" class="header-button">
+                <!--::before -->
+                <div></div>
+                <span class="blind">네이버페이</span>
+                <!--::after -->
+            </button>
+            <button id="header-navertalk" class="header-button">
                 <!--::before -->
                 <div></div>
                 <span class="blind">네이버톡</span>
                 <!--::after -->
             </button>
-            <button id="header-notice">
+            <button id="header-notice" class="header-button">
                 <!--::before -->
                 <div></div>
                 <span class="blind">알림</span>
-                <!--::after -->
-            </button>
-            <button id="header-pay">
-                <!--::before -->
-                <div></div>
-                <span class="blind">네이버페이</span>
                 <!--::after -->
             </button>
             <div id="search">
@@ -3040,7 +3028,6 @@
                         </button>
                     </div>
                 </form>
-
             </div>
             <nav id="nav">
                 <ul>
@@ -3114,7 +3101,7 @@
                 </a>
                 <a href="https://velog.io/redius01" target="_blank" class="right-ad">
                     <div class="play"></div>
-                    <span class="blind">광고 동영상 보기</span>
+                    <span class="blind">velog 바로가기</span>
                 </a>
             </aside>
             <div id="main-middle">
@@ -3133,7 +3120,6 @@
                                     <a href="#">전체언론사</a>
                                     <div id="main-newsstand-animation">
                                         <a href="#">연합뉴스</a><a href="#">[날씨] 전국 대부분 눈... 아침 영하권 추위 '성큼 다가온 겨울'</a>
-
                                     </div>
                                 </div>
                                 <div class="right">
