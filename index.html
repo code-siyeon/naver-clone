@@ -215,9 +215,9 @@
         cursor: pointer;
     }
 
-    .header-button:hover::before {
+    #header .header-button:hover::before {
         position: absolute;
-        content: ''; 
+        content: '';
         z-index: 0;
         left: 1px;
         top: 1px;
@@ -227,7 +227,7 @@
         border-radius: 50%;
     }
 
-    #header .header-button>div {
+    .header-button>div {
         position: relative;
         width: 26px;
         height: 26px;
@@ -245,7 +245,7 @@
         left: 43px;
     }
 
-  
+
     #header-navertalk {
         right: 50px;
     }
@@ -589,15 +589,15 @@
         box-shadow: 0 5px 5px -3px rgb(0 0 0 / 30%);
     }
 
-    #main-top-ad>.left-ad:before,
+    #main-top-ad>.left-ad::before,
     #main-top-ad>.left-ad::after {
         content: " ";
         display: block;
         position: absolute;
         right: 0px;
         left: 0px;
-        height: 2px;
-        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4) 90%, transparent 10%);
+        height: 3px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4) 70%, transparent 10%);
         background-size: 15px 2px;
     }
 
@@ -618,7 +618,7 @@
         border-radius: 50px;
         background-image: url(./velog.png);
         background-repeat: no-repeat;
-        box-shadow: 3px 3px 8px rgb(0 0 0 / 30%);
+        box-shadow: -3px 0px -30px -5px rgb(0 0 0 / 20%);
     }
 
     #main-top-ad .right-ad .play {
@@ -631,7 +631,7 @@
         border-radius: 52%;
         background-image: url(./link.png);
         background-repeat: no-repeat;
-        box-shadow: 0 3px 8px rgb(0 0 0 / 30%);
+
     }
 
     #main-top-ad .right-ad .play:hover {
@@ -645,78 +645,7 @@
         margin-right: 30px;
     }
 
-    #main-right {
-        width: 420px;
-        box-shadow: none;
-    }
 
-    #main-login {
-        height: 163.78px;
-        padding: 21px 20px 18px;
-        font-size: 1.4rem;
-        display: flex;
-        flex-flow: column;
-    }
-
-    #main-login>div:first-of-type {
-        line-height: 20px;
-        text-align: center;
-        vertical-align: top;
-    }
-
-    #main-login-button {
-        margin-top: 13px;
-        padding: 17px 0;
-        border-radius: 4px;
-        border: 1px solid rgba(0, 0, 0, .06);
-        box-shadow: 0 2px 4px 0 rgba(3, 199, 90, .12);
-        background-color: #03c75a;
-        color: white;
-        text-decoration: none;
-    }
-
-    #main-login-button:hover {
-        background-color: #17b75e;
-        box-shadow: 0 2px 4px 0 rgba(3, 199, 90, .24);
-    }
-
-    #main-login-button i {
-        background-image: url(./favicon.ico);
-        background-size: 434px 414px;
-        background-position: -120px -166px;
-        background-repeat: no-repeat;
-        width: 72px;
-        height: 15px;
-        margin: 3px 8px 0 0;
-        display: inline-block;
-    }
-
-    #main-login-button span {
-        position: relative;
-        top: -2px
-    }
-
-    #main-login>div:last-of-type {
-        font-size: 1.3rem;
-        line-height: 20px;
-        height: 20px;
-        text-align: center;
-        margin-top: 16px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #main-login>rch-a div:last-of-type a {
-        color: var(--color_caption2);
-        letter-spacing: -0.4px;
-    }
-
-
-    #main-login .pipe::before {
-        content: " ";
-        margin: 4px 12px 0;
-    }
 
     #main-newsstand-gray,
     #main-shopping-gray,
@@ -802,8 +731,8 @@
         position: relative;
     }
 
-    .left-section footer .list,
-    .left-section footer .grid {
+    .left-section footer .list-button,
+    .left-section footer .grid-button {
         position: absolute;
         border: none;
         cursor: pointer;
@@ -811,12 +740,12 @@
         background-color: transparent;
     }
 
-    .left-section footer .list {
+    .left-section footer .list-button {
         right: 40px;
         padding: 18px 9px 18px 20px;
     }
 
-    .left-section footer .list::before {
+    .left-section footer .list-button::before {
         content: "";
         display: inline-block;
         background: url(./favicon.ico);
@@ -828,12 +757,27 @@
 
     }
 
-    .left-section footer .list:hover::before {
+    .left-section footer .list-button:hover::before {
         background-position: -236px -356px;
     }
 
-    .left-section footer .prev,
-    .left-section footer .next {
+    .left-section footer .grid-button {
+        right: 0px;
+        padding: 18px 20px 18px 9px;
+    }
+
+    .left-section footer .grid-button::before {
+        content: "";
+        display: inline-block;
+        background: url(./favicon.ico);
+        background-size: 434px 414px;
+        background-position: -389px -126px;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+    }
+
+    .left-section footer .way {
         display: flex;
         position: relative;
         width: 36px;
@@ -942,13 +886,13 @@
     }
 
     /* 전체언론사 */
-    #main-newsstand-gray .left>a:first-of-type {
+    #main-newsstand-gray .left>a {
         width: 86px;
         color: var(--color_caption1);
     }
 
     /* 화살표 */
-    #main-newsstand-gray .left>a:first-of-type::after {
+    #main-newsstand-gray .left>a::after {
         content: " ";
         background: url(./favicon.ico);
         background-size: 434px 414px;
@@ -1043,7 +987,7 @@
         width: 790px;
     }
 
-    #main-newsstand-grid .main-newsstand-grid-box {
+    #main-newsstand-grid .grid-box {
         position: relative;
         padding: 18px 0;
         display: flex;
@@ -1052,28 +996,29 @@
         background-color: white;
     }
 
-    #main-newsstand-grid .main-newsstand-grid-box img {
+    #main-newsstand-grid .grid-box img {
         position: absolute;
+        width: 55px;
         height: 20px;
     }
 
-    .main-newsstand-grid-box:hover img {
+    #main-newsstand-grid .grid-box:hover img {
         display: none;
     }
 
-    .main-newsstand-grid-box .hover-box,
-    .main-newsstand-grid-box .hover-box a {
+    #main-newsstand-grid .grid-box .hover-box,
+    #main-newsstand-grid .grid-box .hover-box a {
         background-color: transparent;
         color: transparent;
     }
 
-    .main-newsstand-grid-box:hover {
+    #main-newsstand-grid .grid-box:hover {
         display: flex;
         justify-content: center;
         gap: 10px;
     }
 
-    .main-newsstand-grid-box:hover .hover-box {
+    #main-newsstand-grid .grid-box:hover .hover-box {
         position: absolute;
         display: flex;
         width: 130.5px;
@@ -1084,44 +1029,29 @@
         border-radius: 4px;
     }
 
-    .main-newsstand-grid-box:hover .hover-box a {
+    #main-newsstand-grid .grid-box:hover .hover-box a {
         font-size: 1.3rem;
         line-height: 30px;
         font-weight: 400;
         color: #fff;
     }
 
-    .main-newsstand-grid-box:hover .hover-box a:hover {
+    #main-newsstand-grid .grid-box:hover .hover-box a:hover {
         font-weight: bold;
     }
 
-    .hover-box .pipe::before {
+    #main-newsstand-grid .hover-box .pipe::before {
         background-color: transparent;
     }
 
-    .main-newsstand-grid-box:hover .pipe::before {
+    #main-newsstand-grid .grid-box:hover .pipe::before {
+        margin: 0 8px;
         width: 2px;
         opacity: 0.6;
         background-color: var(--color_dot_divider);
-        margin: 0 8px;
     }
 
-    /*footer> .gird*/
-    #main-newsstand footer .grid {
-        right: 0px;
-        padding: 18px 20px 18px 9px;
-    }
 
-    #main-newsstand footer .grid::before {
-        content: "";
-        display: inline-block;
-        background: url(./favicon.ico);
-        background-size: 434px 414px;
-        background-position: -389px -126px;
-        background-repeat: no-repeat;
-        width: 20px;
-        height: 20px;
-    }
 
     #main-newsstand footer .news {
         color: var(--color_news);
@@ -1557,13 +1487,9 @@
 
     .recommend-grid-same .text .dot::before {
         content: " ";
-        display: inline-block;
         width: 3px;
         height: 3px;
-        background-color: var(--color_dot_divider);
         margin: 9px 6px 0;
-        border-radius: 50%;
-        vertical-align: top;
     }
 
     .recommend-grid-same .profile {
@@ -1654,6 +1580,78 @@
         font-weight: 1000;
     }
 
+    #main-right {
+        width: 420px;
+        box-shadow: none;
+    }
+
+    #main-login {
+        height: 163.78px;
+        padding: 21px 20px 18px;
+        font-size: 1.4rem;
+        display: flex;
+        flex-flow: column;
+    }
+
+    #main-login>div:first-of-type {
+        line-height: 20px;
+        text-align: center;
+        vertical-align: top;
+    }
+
+    #main-login-button {
+        margin-top: 13px;
+        padding: 17px 0;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, .06);
+        box-shadow: 0 2px 4px 0 rgba(3, 199, 90, .12);
+        background-color: #03c75a;
+        color: white;
+        text-decoration: none;
+    }
+
+    #main-login-button:hover {
+        background-color: #17b75e;
+        box-shadow: 0 2px 4px 0 rgba(3, 199, 90, .24);
+    }
+
+    #main-login-button i {
+        background-image: url(./favicon.ico);
+        background-size: 434px 414px;
+        background-position: -120px -166px;
+        background-repeat: no-repeat;
+        width: 72px;
+        height: 15px;
+        margin: 3px 8px 0 0;
+        display: inline-block;
+    }
+
+    #main-login-button span {
+        position: relative;
+        top: -2px
+    }
+
+    #main-login>div:last-of-type {
+        font-size: 1.3rem;
+        line-height: 20px;
+        height: 20px;
+        text-align: center;
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #main-login>rch-a div:last-of-type a {
+        color: var(--color_caption2);
+        letter-spacing: -0.4px;
+    }
+
+
+    #main-login .pipe::before {
+        content: " ";
+        margin: 4px 12px 0;
+    }
 
     /*날씨 , 증시*/
     .main-weather-and-stock {
@@ -1836,14 +1834,11 @@
     }
 
 
-    #main-weather-left .sch-base :nth-child(2)::before {
+    #main-weather-left .slash::before {
         content: "";
-        display: inline-block;
-        width: 1px;
+        position: static;
+        margin: 0 5px 0 -2px;
         height: 11px;
-        background-color: var(--color_dot_divider);
-        margin: 0 5px 0 3px;
-        transform: skewX(-15deg);
         vertical-align: -1px;
     }
 
@@ -1871,12 +1866,8 @@
         text-align: center;
     }
 
-    #main-weather-left .ultra-pollution::before {
+    #main-weather-left .dot::before {
         content: "";
-        display: inline-block;
-        width: 3px;
-        height: 3px;
-        background-color: var(--color_dot_divider);
         margin: 8px 6px 0;
         border-radius: 50%;
     }
@@ -2977,7 +2968,7 @@
                 <img src="./q.png" alt="큐: 사전신청 오픈!" width="162px" height="40px">
             </a>
             <button id="header-Hamburger" class="header-button">
-                <!--:hover::before -->
+                <!--::before -->
                 <div></div>
                 <span class="blind">확장 영역</span>
                 <!--::after -->
@@ -3011,13 +3002,16 @@
                     <label for="search-input" class="blind">검색어입력</label>
                     <input id="search-input" type="text" placeholder="검색어를 입력해 주세요">
                     <div id="search-right">
+                        <!--::before -->
                         <button href="#" id="search-keyboard">
                             <span class="blind">입력도구</span>
                         </button>
+                        <!--::before -->
                         <button href="#" id="search-resent">
                             <span class="blind">자동완성/최근검색어펼치기</span>
                         </button>
                         <button href="#" button id="search-button">
+                            <!--::before -->
                             <div><span class="blind">검색</span></div>
                         </button>
                     </div>
@@ -3027,61 +3021,80 @@
                 <ul>
                     <li>
                         <a href="#">
+                            <!--::before -->
                             <div></div>
+                            <!--::after -->
                             <span>메일</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
+                            <!--::before -->
                             <div></div>
+                            <!--::after -->
                             <span>카페</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
+                            <!--::before -->
                             <div></div>
+                            <!--::after -->
                             <span>블로그</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
+                            <!--::before -->
                             <div></div>
+                            <!--::after -->
                             <span>쇼핑</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
+                            <!--::before -->
                             <div></div>
+                            <!--::after -->
                             <span>뉴스</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
+                            <!--::before -->
                             <div></div>
+                            <!--::after -->
                             <span>증권</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
+                            <!--::before -->
                             <div></div>
                             <span>부동산</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
+                            <!--::before -->
                             <div></div>
+                            <!--::after -->
                             <span>지도</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
+                            <!--::before -->
                             <div></div>
+                            <!--::after -->
                             <span>웹툰</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
+                            <!--::before -->
                             <div></div>
+                            <!--::after -->
                             <span class="blind">더보기</span>
                         </a>
                     </li>
@@ -3090,9 +3103,11 @@
         </header>
         <main id="main">
             <aside id="main-top-ad">
+                <!--::before -->
                 <a href="https://velog.io/redius01" target="_blank" class="left-ad">
                     <span class="blind">디테일에 빠진 이시연, 웹사이트를 더욱 완성도 높게 만듭니다.</span>
                 </a>
+                <!--::after -->
                 <a href="https://velog.io/redius01" target="_blank" class="right-ad">
                     <div class="play"></div>
                     <span class="blind">velog 바로가기</span>
@@ -3112,8 +3127,12 @@
                             <div id="main-newsstand-gray">
                                 <div class="left">
                                     <a href="#">전체언론사</a>
+                                    <!--::after -->
+                                    <!--::before -->
                                     <div id="main-newsstand-animation">
-                                        <a href="#">연합뉴스</a><a href="#">[날씨] 전국 대부분 눈... 아침 영하권 추위 '성큼 다가온 겨울'</a>
+                                        <a href="#">연합뉴스</a>
+                                        <!--::after -->
+                                        <a href="#">[날씨] 전국 대부분 눈... 아침 영하권 추위 '성큼 다가온 겨울'</a>
                                     </div>
                                 </div>
                                 <div class="right">
@@ -3123,183 +3142,211 @@
                             </div>
                         </div>
                         <div id="main-newsstand-grid">
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/C.png" alt="Chosunbiz">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/A.png" alt="아시아경제">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/D.png" alt="데일리안">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/DO.png" alt="독서신문">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/E.png" alt="이데일리">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/F.png" alt="파이낸설뉴스">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/GU.png" alt="국방일보">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/H.png" alt="헤럴드경제">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/IR.png" alt="일요신문">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/J.png" alt="JTBC">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/K.png" alt="KBS">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/M.png" alt="매일경제">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/MT.png" alt="머니투데이">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/N.png" alt="노컷뉴스">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/O.png" alt="OSEN">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/S-K.png" alt="spotalkorea">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/S.png" alt="스포츠서울">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/SI.png" alt="시사IN">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/T.png" alt="The JoongAng">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/TO.png" alt="뉴스토마토">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/V.png" alt="VERITAS">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/W.png" alt="WOMAN DOONGA">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/YA.png" alt="약사공론">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
-                            <div class="main-newsstand-grid-box">
+                            <div class="grid-box">
                                 <img src="./news/YT.png" alt="YTN">
                                 <div class="hover-box">
                                     <a href="#this">구독</a>
+                                    <!--::before -->
                                     <a href="#this" class="pipe">기사보기</a>
                                 </div>
                             </div>
                         </div>
                         <footer>
+                            <!--::before -->
                             <button class="prev way"><span class="blind">이전 페이지</span></button>
                             <span class="text news">언론사
                                 <span class="first">더보기 1</span><span class="last">/4</span>
                             </span>
+                            <!--::before -->
                             <button class="next way"><span class="blind">다음 페이지</span></button>
-                            <button class="list"><span class="blind">목록보기</span></button>
-                            <button class="grid"><span class="blind">격자보기</span></button>
+                            <!--::before -->
+                            <button class="list-button"><span class="blind">목록보기</span></button>
+                            <!--::before -->
+                            <button class="grid-button"><span class="blind">격자보기</span></button>
                         </footer>
                     </section>
                     <section id="main-shopping" class="left-section">
@@ -3315,12 +3362,15 @@
                                     <span class="today">오늘의 혜택</span>
                                     <img src="./pas_main.png" alt="패션플러스" class="pas">
                                     <a href="#">11/21~11/23 블랙패플데이! <span> 최대 12만원 쿠폰혜택,</span> 타임특가까지</a>
+                                    <!--::after -->
                                 </div>
                                 <div class="page">
                                     <span class="first">1</span>
                                     <span class="last">/18</span>
-                                    <button class="prev"><span class="blind">이전페이지</span></button><!--
-                                 --><button class="next"><span class="blind">다음페이지</span></button>
+                                    <!--::before -->
+                                    <button class="prev"><span class="blind">이전페이지</span></button>
+                                    <!--::before -->
+                                    <button class="next"><span class="blind">다음페이지</span></button>
                                 </div>
                             </div>
                         </div>
@@ -3430,24 +3480,28 @@
                                 <ul>
                                     <li>
                                         <a href="#this">
+                                            <!--before-->
                                             <div class="item-border"></div>
                                             <div class="item-text">쇼핑홈</div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#this">
+                                            <!--before-->
                                             <div class="item-border"></div>
                                             <div class="item-text">리뷰적립</div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#this">
+                                            <!--before-->
                                             <div class="item-border"></div>
                                             <div class="item-text">주문</div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#this">
+                                            <!--before-->
                                             <div class="item-border"></div>
                                             <div class="item-text">장바구니</div>
                                         </a>
@@ -3791,7 +3845,7 @@
                             </a>
                             <a href="#" class="item">
                                 <div class="ad-box">
-                                    <img src="./photo2/animal-8.jpg">
+                                    <img src="./photo2/animal-8.jpg" alt="MBTI별 최악의 연애 상대">
                                     <i class="ad-button">
                                         <button>
                                             <span class="blind">AD, 광고 닫기</span>
@@ -3881,7 +3935,7 @@
                           --><span>로그인</span>
                         </a>
                         <div>
-                            찾 <a href="#">아이디 찾기</a>
+                            <a href="#">아이디 찾기</a>
                             <!--::before -->
                             <a href="#" class="pipe">비밀번호 찾기</a>
                             <!--::before -->
@@ -3904,13 +3958,16 @@
                                         </div>
                                     </div>
                                     <div class="sch-base">
-                                        <span>-2°<span class="blind">최저기온</span><!--                                                                                                                                                                                                                                                                                                                     
-                                     --><span>3°<span class="blind">최고기온</span></span>
+                                        <span>-2°<span class="blind">최저기온</span>
+                                            <!-- before -->
+                                            <span class="slash">3°<span class="blind">최고기온</span></span>
+                                        </span>
                                     </div>
                                 </a>
                                 <a href="#" class="dust">
                                     <span class="pollution">미세<span>좋음</span></span>
-                                    <span class="ultra-pollution">초미세<span>좋음</span></span>
+                                    <!-- before -->
+                                    <span class="dot ultra-pollution">초미세<span>좋음</span></span>
                                 </a>
                             </div>
                             <div id="main-weather-right">
@@ -3922,6 +3979,7 @@
                         <header>
                             <text><a href="#">증시</a></text>
                             <span>11.27. 17:44</span>
+                            <!-- before -->
                             <button><span class="blind">새로고침</span></button>
                         </header>
                         <div id="main-stock-content">
@@ -3962,7 +4020,12 @@
                                             </span>
                                         </a>
                                     </li>
-                                    <li><a href="#"><span class="stock-item">인기종목 더보기</span></a></li>
+                                    <li>
+                                        <a href="#">
+                                            <!-- after -->
+                                            <span class="stock-item">인기종목 더보기</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -3995,6 +4058,7 @@
                                 </a>
                             </div>
                             <div id="widget-papago"><!-- 파파고 -->
+                                <!-- before -->
                                 <a href="#">
                                     <div class="papago-box">
                                         <i><span class="blind">papago</span></i>
@@ -4003,10 +4067,12 @@
                                 </a>
                             </div>
                             <div id="widget-English"><!-- 영어사전 -->
+                                <!-- before -->
                                 <div class="English-border">
                                     <a href="#" class="English-header">
                                         <span>영어사전</span>
                                     </a>
+                                    <!-- before -->
                                     <a href="#" class="English-content">
                                         <div class="English-text">
                                             <strong>What are your strengths?</strong>
@@ -4023,12 +4089,15 @@
                                     <i><span class="blind">VIBE</span></i>
                                     <div>쉼이 있는 자연의 풍경</div>
                                 </header>
+                                <!-- ::before -->
                                 <div id="VIBE-content">
                                     <ul>
                                         <li>
                                             <a href="#">
                                                 <img src="./VIBE/VIBE-content-li-1.png" alt="다산초당">
+                                                <!-- ::before -->
                                                 <i></i>
+                                                <!-- ::after -->
                                                 <span class="blind">재생</span>
                                             </a>
                                             <a href="#"><span>다산초당으로 불어오는 바람 소리</span></a>
@@ -4036,7 +4105,9 @@
                                         <li>
                                             <a href="#">
                                                 <img src="./VIBE/VIBE-content-li-2.png" alt="협재 해수욕장">
+                                                <!-- ::before -->
                                                 <i></i>
+                                                <!-- ::after -->
                                                 <span class="blind">재생</span>
                                             </a>
                                             <a href="#"><span>은모래빛 협재 해수욕장</span></a>
@@ -4044,7 +4115,9 @@
                                         <li>
                                             <a href="#">
                                                 <img src="./VIBE/VIBE-content-li-3.png" alt="붉은 낙조와 잔잔한 파도">
+                                                <!-- ::before -->
                                                 <i></i>
+                                                <!-- ::after -->
                                                 <span class="blind">재생</span>
                                             </a>
                                             <a href="#"><span>붉은 낙조와 잔잔한 파도</span></a>
@@ -4052,7 +4125,9 @@
                                         <li>
                                             <a href="#">
                                                 <img src="./VIBE/VIBE-content-li-4.png" alt="우포늪">
+                                                <!-- ::before -->
                                                 <i></i>
+                                                <!-- ::after -->
                                                 <span class="blind">재생</span>
                                             </a>
                                             <a href="#"><span>우포늪의 은은한 소리</span></a>
@@ -4060,11 +4135,13 @@
                                     </ul>
                                 </div>
                             </div>
+                            <!-- ::before -->
                             <div id="m-naver"><!--모바일-->
                                 <a href="#this">
                                     <strong>모바일 네이버 메인</strong> 열기
                                 </a>
                             </div>
+                            <!-- ::after -->
                         </div>
                     </section>
                     <section id="whale">
@@ -4074,7 +4151,9 @@
                                 <strong>나만의 스마트한 브라우저 웨일</strong>
                                 <div>인터넷을 여는 가장 스마트한 방법</div>
                             </div>
+                            <!-- ::before -->
                             <div class="circle"></div>
+                            <!-- ::after -->
                         </a>
                     </section>
                 </div>
@@ -4090,6 +4169,7 @@
                             <i class="ad-button2">
                                 <span class="blind">AD, 광고 닫기</span>
                             </i>
+                            <!-- ::after -->
                         </div>
                         <div class="banner-text-box">
                             <span class="bold">초록우산</span>
@@ -4127,6 +4207,7 @@
                         <a href="#">네이버 ‘개인정보 처리방침’ 변경에 대한 안내 말씀드립니다.</a>
                     </div>
                     <a href="#" class="bold">서비스 전체보기</a>
+                    <!-- ::after -->
                 </section>
                 <section id="side">
                     <div id="resource">
