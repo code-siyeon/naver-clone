@@ -179,9 +179,31 @@
         background-color: var(--color_dot_divider);
     }
 
+    .dot::before {
+        content: " ";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background-color: var(--color_dot_divider);
+        margin: 9px 7px 0;
+        border-radius: 50%;
+        vertical-align: top;
+    }
+
+    .slash::before {
+        content: " ";
+        display: inline-block;
+        position: absolute;
+        top: 4px;
+        left: 13px;
+        width: 1px;
+        height: 15px;
+        background-color: var(--color_dot_divider);
+        transform: skewX(-15deg);
+    }
 
 
-    .header-button {
+    #header .header-button {
         display: block;
         position: absolute;
         top: 18px;
@@ -195,7 +217,7 @@
 
     .header-button:hover::before {
         position: absolute;
-        content: '';
+        content: ''; 
         z-index: 0;
         left: 1px;
         top: 1px;
@@ -205,7 +227,7 @@
         border-radius: 50%;
     }
 
-    .header-button>div {
+    #header .header-button>div {
         position: relative;
         width: 26px;
         height: 26px;
@@ -223,7 +245,7 @@
         left: 43px;
     }
 
-
+  
     #header-navertalk {
         right: 50px;
     }
@@ -685,20 +707,14 @@
         align-items: center;
     }
 
-    #main-login>div:last-of-type a {
+    #main-login>rch-a div:last-of-type a {
         color: var(--color_caption2);
         letter-spacing: -0.4px;
     }
 
 
-    #main-login>div:last-of-type>a:nth-of-type(2)::before,
-    #main-login>div:last-of-type>a:nth-of-type(2)::after {
-        content: "";
-        display: inline-block;
-        width: 1px;
-        height: 12px;
-        background-color: #d3d5d7;
-        background-color: var(--color_dot_divider);
+    #main-login .pipe::before {
+        content: " ";
         margin: 4px 12px 0;
     }
 
@@ -773,29 +789,6 @@
         padding-left: 26px;
     }
 
-    .left-section .dot::before {
-        content: " ";
-        display: inline-block;
-        width: 4px;
-        height: 4px;
-        background-color: #d3d5d7;
-        background-color: var(--color_dot_divider);
-        margin: 9px 7px 0;
-        border-radius: 50%;
-        vertical-align: top;
-    }
-
-    .left-section header .slash::before {
-        content: " ";
-        display: inline-block;
-        position: absolute;
-        top: 4px;
-        left: 13px;
-        width: 1px;
-        height: 15px;
-        background-color: var(--color_dot_divider);
-        transform: skewX(-15deg);
-    }
 
     .left-section footer {
         border-top: 1px solid var(--color_border_in);
@@ -2984,7 +2977,7 @@
                 <img src="./q.png" alt="큐: 사전신청 오픈!" width="162px" height="40px">
             </a>
             <button id="header-Hamburger" class="header-button">
-                <!--::before -->
+                <!--:hover::before -->
                 <div></div>
                 <span class="blind">확장 영역</span>
                 <!--::after -->
@@ -3010,6 +3003,7 @@
             <div id="search">
                 <form action="">
                     <a id='search-svg' href="https://www.naver.com/">
+                        <!--::after -->
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path>
                         </svg>
@@ -3887,9 +3881,11 @@
                           --><span>로그인</span>
                         </a>
                         <div>
-                            <a href="#">아이디 찾기</a>
-                            <a href="#">비밀번호 찾기</a>
-                            <a href="#">회원가입</a>
+                            찾 <a href="#">아이디 찾기</a>
+                            <!--::before -->
+                            <a href="#" class="pipe">비밀번호 찾기</a>
+                            <!--::before -->
+                            <a href="#" class="pipe">회원가입</a>
                         </div>
                     </section>
                     <section id="main-weather" class="main-weather-and-stock">
