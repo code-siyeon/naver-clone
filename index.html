@@ -101,35 +101,6 @@
         height: 100%;
     }
 
-
-
-    #wrap {
-        min-width: 1340px;
-        text-align: center;
-    }
-
-    #header {
-        position: relative;
-        margin: 0 auto;
-        padding: 70px 0 22px;
-        width: 1280px;
-        height: 268px;
-        text-align: left;
-    }
-
-    #main {
-        margin: 0 auto;
-        width: 1280px;
-    }
-
-    #footer {
-        width: 100%;
-        background-color: #f5f6f7;
-        text-align: left;
-    }
-
-
-
     aside[id$=ad] {
         margin-bottom: 16px;
         border-radius: 8px;
@@ -202,6 +173,30 @@
         transform: skewX(-15deg);
     }
 
+    #wrap {
+        min-width: 1340px;
+        text-align: center;
+    }
+
+    #header {
+        position: relative;
+        margin: 0 auto;
+        padding: 70px 0 22px;
+        width: 1280px;
+        height: 268px;
+        text-align: left;
+    }
+
+    #main {
+        margin: 0 auto;
+        width: 1280px;
+    }
+
+    #footer {
+        width: 100%;
+        background-color: #f5f6f7;
+        text-align: left;
+    }
 
     #header .header-button {
         display: block;
@@ -328,9 +323,6 @@
         padding: 17px 16px 17px 27px;
     }
 
-    #search-svg::after {
-        display: none;
-    }
 
     #search-svg svg {
         fill: #03c75a;
@@ -351,7 +343,7 @@
         flex: 1;
         display: flex;
         justify-content: flex-end;
-        align-items: stretch;
+        align-items: center;
     }
 
     #search-keyboard,
@@ -403,49 +395,55 @@
         height: 25px;
     }
 
-
-
     #nav {
         position: absolute;
-        width: 676px;
         top: 70px;
         left: 8px;
         margin: 72px 302px 0;
-
     }
 
     #nav>ul {
         display: flex;
         list-style-type: none;
-        justify-content: center;
         font-size: 1.4rem;
-        font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
         font-weight: 500;
     }
 
     #nav li {
         width: 64px;
         margin-left: 4px;
-        justify-content: center;
     }
 
     #nav a {
         text-align: center;
     }
 
-    #nav a div {
+    #nav .icon {
         margin: 0 auto;
         position: relative;
         z-index: 1;
-        display: inline-flex
+        display: inline-flex;
     }
 
-    #nav a div::after {
-        content: '';
-        display: inline-block;
+    #nav .icon::before,
+    #nav .icon::after {
+        content: " ";
+        position: absolute;
         background-image: url(./favicon.ico);
         background-size: 434px 414px;
         background-repeat: no-repeat;
+    }
+
+    /*버튼모양 */
+    #nav li .icon::before {
+        top: -2px;
+        left: -3px;
+        width: 54px;
+        height: 54px;
+        background-position: 0px -128px;
+    }
+
+    #nav .icon::after {
         width: 44px;
         height: 44px;
         margin: 2px;
@@ -453,100 +451,84 @@
         z-index: 1;
     }
 
-    /*버튼모양 */
-    #nav li a div::before {
-        content: "";
-        position: absolute;
-        top: -2px;
-        left: -3px;
-        background-image: url(./favicon.ico);
-        background-size: 434px 414px;
-        background-position: 0px -128px;
-        background-repeat: no-repeat;
-        width: 54px;
-        height: 54px;
-        z-index: 1;
-    }
 
-    #nav li a div:hover {
+    #nav li .icon:hover {
         position: relative;
         box-shadow: 0 2px 3px 2px;
         border-radius: 17px;
         color: #e3e5e8;
     }
 
+    #nav li:nth-of-type(10) .icon {
+        box-shadow: none;
+    }
+
     #nav li:nth-of-type(1) {
         margin-left: 0px;
     }
 
-    #nav li:nth-of-type(1) a div::after {
+    #nav li:nth-of-type(1) .icon::after {
         background-position: -250px -90px;
     }
 
-    #nav li:nth-of-type(2) a div::after {
+    #nav li:nth-of-type(2) .icon::after {
         background-position: -250px 0px;
     }
 
-    #nav li:nth-of-type(3) a div::after {
+    #nav li:nth-of-type(3) .icon::after {
         background-position: -201px -98px;
     }
 
-    #nav li:nth-of-type(4) a div::after {
+    #nav li:nth-of-type(4) .icon::after {
         background-position: -90px -209px;
     }
 
-    #nav li:nth-of-type(5) a div::after {
+    #nav li:nth-of-type(5) .icon::after {
         background-position: 0px -209px;
     }
 
-    #nav li:nth-of-type(6) a div::after {
+    #nav li:nth-of-type(6) .icon::after {
         background-position: -180px -209px;
     }
 
-    #nav li:nth-of-type(7) a div::after {
+    #nav li:nth-of-type(7) .icon::after {
         background-position: -45px -209px;
     }
 
-    #nav li:nth-of-type(8) a div::after {
+    #nav li:nth-of-type(8) .icon::after {
         background-position: -201px 0px;
         margin: 0px;
         width: 48px;
         height: 48px;
     }
 
-    #nav li:nth-of-type(9) a div::after {
+    #nav li:nth-of-type(9) .icon::after {
         background-position: -225px -209px;
     }
 
-    #nav li:nth-of-type(10) a div::after {
+    #nav li:nth-of-type(10) .icon::after {
         background-position: -250px -135px;
     }
 
     #nav li:nth-of-type(10) :hover::before {
         content: " ";
-        position: absolute;
         border-radius: 17px;
         background-position: 0px -69px;
         background-repeat: no-repeat;
-        top: -14.5px;
-        left: -4px;
+        top: -3px;
+        left: -5.0px;
         width: 58px;
         height: 58px;
-        text-align: left;
     }
-
 
     #nav li:nth-of-type(10) :hover::after {
         content: " ";
-        position: absolute;
         background-size: 434px 414px;
         background-position: -110px -201px;
         background-repeat: no-repeat;
-        margin: 21px 13px;
+        margin: 21px 13.1px;
         width: 22px;
         height: 6px;
-        top: -11px;
-        /* left: -13px; */
     }
 
     #nav li a span {
@@ -636,8 +618,7 @@
 
     #main-top-ad .right-ad .play:hover {
         background-image: url(./link-icon.png);
-        transform: rotate(15deg);
-        transition: backgroundColor 0.15s ease 0s;
+        transform: rotate(15deg)
     }
 
     #main-left {
@@ -706,7 +687,7 @@
     .left-section header {
         display: flex;
         flex: 1;
-        justify-content: flex-start;
+        justify-content: left;
         font-size: 1.6rem;
         font-weight: 800;
         line-height: 23px;
@@ -720,15 +701,15 @@
 
 
     .left-section footer {
-        border-top: 1px solid var(--color_border_in);
-        padding: 10px 0 11px;
-        font-size: 1.3rem;
-        line-height: 35px;
-        font-weight: 600;
-        color: var(--color_caption2);
+        position: relative;
         display: flex;
         justify-content: center;
-        position: relative;
+        padding: 10px 0 11px;
+        color: var(--color_caption2);
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 35px;
+        border-top: 1px solid var(--color_border_in);
     }
 
     .left-section footer .list-button,
@@ -827,6 +808,32 @@
 
     .left-section footer .hot {
         color: #9858F5
+    }
+
+    #main-newsstand-top .red {
+        background-color: var(--color_live_news_price);
+        display: inline-block;
+        margin-top: 3px;
+        padding: 0 5px 0 4px;
+        border-radius: 9px;
+        font-size: 1.1rem;
+        line-height: 18px;
+        font-weight: 900;
+        vertical-align: top;
+        color: #fff;
+    }
+
+    #main-newsstand-top .red::before {
+        content: " ";
+        display: inline-block;
+        background-image: url(./favicon.png);
+        background-size: 433px 412px;
+        background-position: -409px -389px;
+        background-repeat: no-repeat;
+        width: 14px;
+        height: 10px;
+        margin: 4px 3px 0 0;
+        vertical-align: top;
     }
 
     #main-shopping-gray .page .first,
@@ -1046,12 +1053,8 @@
 
     #main-newsstand-grid .grid-box:hover .pipe::before {
         margin: 0 8px;
-        width: 2px;
-        opacity: 0.6;
         background-color: var(--color_dot_divider);
     }
-
-
 
     #main-newsstand footer .news {
         color: var(--color_news);
@@ -1322,9 +1325,11 @@
         text-align: center;
     }
 
+
+
+
     #main-recommend {
         padding: 0 20px;
-        margin-top: 16px;
     }
 
     #main-recommend header {
@@ -1593,7 +1598,7 @@
         flex-flow: column;
     }
 
-    #main-login>div:first-of-type {
+    #main-login .text {
         line-height: 20px;
         text-align: center;
         vertical-align: top;
@@ -1653,11 +1658,11 @@
         margin: 4px 12px 0;
     }
 
+
+
     /*날씨 , 증시*/
     .main-weather-and-stock {
-        width: 420px;
         height: 236px;
-        margin-top: 16px;
         padding: 0 18px
     }
 
@@ -1669,7 +1674,6 @@
     }
 
     .main-weather-and-stock header>span {
-        flex: none;
         margin-left: auto;
         font-size: 1.3rem;
     }
@@ -1754,10 +1758,10 @@
 
     #main-weather-left {
         margin: 20px 0 18px;
-        flex-wrap: wrap;
+        flex-flow: column;
     }
 
-    #main-weather-left a {
+    #main-weather-left>a {
         display: block;
         height: 118px;
     }
@@ -1766,7 +1770,7 @@
         text-decoration: none;
     }
 
-    #main-weather-left .sch-border {
+    #main-weather-left .sketch-border {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1794,8 +1798,8 @@
     }
 
 
-    /*1.2 흐림  sketch=sch */
-    #main-weather-left .sch-right {
+
+    #main-weather-left .sketch-right {
         font-size: 3.9rem;
         line-height: 48px;
         height: 68px;
@@ -1804,7 +1808,7 @@
     }
 
     /* 흐림 */
-    #main-weather-left .sch-right-bottom {
+    #main-weather-left .sketch-right-bottom {
         overflow: hidden;
         text-overflow: ellipsis;
         text-align: left;
@@ -1817,19 +1821,19 @@
     }
 
     /* 최저기온, 최고온도 */
-    #main-weather-left .sch-base {
+    #main-weather-left .sketch-base {
         margin-top: 16px;
         line-height: 16px;
         font-size: 14.7px;
     }
 
     /* -2° (최저기온)*/
-    #main-weather-left .sch-base :nth-child(1) {
+    #main-weather-left .sketch-base :nth-child(1) {
         color: #3172e7;
     }
 
     /* 3° (최고기온)*/
-    #main-weather-left .sch-base :nth-child(2) {
+    #main-weather-left .sketch-base :nth-child(2) {
         color: #cd3534;
     }
 
@@ -1842,15 +1846,13 @@
         vertical-align: -1px;
     }
 
-
-
     #main-weather-left .dust {
         display: flex;
+        justify-content: center;
         margin-top: 6px;
         line-height: 20px;
         width: 180px;
         height: 20px;
-        justify-content: center
     }
 
     /*미세먼지 ,초미세 먼지*/
@@ -1901,7 +1903,6 @@
 
     #main-stock {
         height: 236px;
-        margin: 0;
     }
 
     /* 새로고침 */
@@ -1950,7 +1951,6 @@
     #main-stock-left .rate {
         color: #101010;
     }
-
 
     #main-stock-left .USD {
         font-size: 15px;
@@ -2029,13 +2029,13 @@
         width: 78px;
     }
 
-    /* 인기종목 */
-    #main-stock-right .stock-item:last-of-type {
+    /*화살표 */
+    #main-stock-right .stock-item .arrow {
         overflow: visible;
         color: #606060;
     }
 
-    #main-stock-right .stock-item:last-of-type::after {
+    #main-stock-right .stock-item .arrow::after {
         content: " ";
         display: inline-block;
         background-image: url(./favicon.png);
@@ -2072,24 +2072,16 @@
         background-position: -164px -201px;
     }
 
-    #widget,
-    #whale {
-        float: left;
-        width: 420px;
-        margin-top: 16px;
-        box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0, 0, 0, .04);
-        border-radius: 8px;
-    }
 
-    #widget {
+    #main-widget {
         background-color: var(--color_board_bg);
     }
 
-    #widget-content {
+    #main-widget-content {
         padding: 15px 18px 20px;
     }
 
-    #widget-content header {
+    #main-widget-content header {
         color: var(--color_title);
         position: relative;
         padding-bottom: 1px;
@@ -2165,7 +2157,6 @@
     }
 
     #widget-calendar .day {
-        display: block;
         margin: 8px 0 0 -1px;
         line-height: 36px;
     }
@@ -2209,7 +2200,7 @@
     }
 
     #widget-memo div::after {
-        content: "";
+        content: " ";
         display: block;
         position: absolute;
         right: 0;
@@ -2250,12 +2241,11 @@
     }
 
     #widget-papago>a::before {
-        content: "";
+        content: " ";
         display: block;
         position: absolute;
-        top: 46%;
-        left: -0%;
-        transform: translate(-50%, -50%);
+        top: 54px;
+        left: -40px;
         background-image: url(./favicon.png);
         background-size: 433px 412px;
         background-position: 0px 0px;
@@ -2268,7 +2258,6 @@
         display: flex;
         height: 100%;
         padding: 18px 18px 12px 18px;
-        box-sizing: border-box;
         flex-direction: column;
         justify-content: space-between;
     }
@@ -2306,14 +2295,23 @@
     }
 
     #widget-English .English-border::before {
-        content: "";
+        content: " ";
         display: block;
         position: absolute;
         top: 0;
         right: 4px;
         bottom: 0;
-        width: 3px;
+        width: 12px;
         border-radius: 0 8px 8px 0;
+        box-shadow: 0 0 0 1px #ebebeb, 1px 0 2px 0 rgba(0, 0, 0, .04);
+    }
+
+    #widget-English .English-border-line {
+        background-color: var(--color_menu_widget_bg);
+        position: relative;
+        height: 100%;
+        margin-right: 8px;
+        border-radius: 8px;
         box-shadow: 0 0 0 1px #ebebeb, 1px 0 2px 0 rgba(0, 0, 0, .04);
     }
 
@@ -2456,29 +2454,6 @@
         height: 278px;
     }
 
-    #widget-VIBE header {
-        display: flex;
-        padding: 15px 18px 0;
-        height: 37px;
-    }
-
-    #widget-VIBE header i {
-        background-image: url(./favicon.png);
-        background-size: 433px 412px;
-        background-position: -69px -254px;
-        background-repeat: no-repeat;
-        width: 68px;
-        height: 18px;
-        flex: none;
-        margin: 2px 8px 0 0;
-    }
-
-    #widget-VIBE header div {
-        color: var(--color_title);
-        font-size: 1.5rem;
-        line-height: 22px;
-        font-weight: 800;
-    }
 
     #VIBE-content {
         width: 366px;
@@ -2616,12 +2591,12 @@
         line-height: 25px;
     }
 
-    #whale {
+    #main-whale {
         position: relative;
         padding: 8px 50px 8px 18px;
     }
 
-    #whale a {
+    #main-whale a {
         overflow: hidden;
         display: flex;
         width: 352px;
@@ -2631,7 +2606,7 @@
         align-items: center;
     }
 
-    #whale img {
+    #main-whale img {
         display: block;
         margin-right: 12px;
     }
@@ -2647,7 +2622,7 @@
         white-space: nowrap;
         color: var(--color_body);
         font-size: 14.7px;
-        text-align: start;
+        text-align: left;
     }
 
     #whale-content div:last-child {
@@ -2686,7 +2661,7 @@
     #footer,
     #banner,
     #notice,
-    #side,
+    #resource-service,
     #company {
         border-top: 1px solid var(--color_border_in_divider);
         letter-spacing: -0.5px;
@@ -2702,7 +2677,7 @@
     #banner {
         padding: 30px 0;
         display: flex;
-        justify-content: flex-start;
+        justify-content: flex-left;
     }
 
     #banner .banner-border {
@@ -2729,7 +2704,7 @@
     }
 
     #banner .banner3 {
-        margin-left: 15px;
+        margin-left: 18px;
     }
 
 
@@ -2868,9 +2843,9 @@
         margin: 3px 0 0 10px;
     }
 
-    #side {
+    #resource-service {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 
     #resource {
@@ -2878,21 +2853,19 @@
         overflow: hidden;
         line-height: 20px;
         padding: 20px 0;
+        letter-spacing: -0.4px;
     }
 
 
     #resource .bold {
-        display: inline-block;
         width: 110px;
         padding-right: 23px;
+        float: left;
     }
 
-    #resource a {
-        display: inline-block;
-    }
 
-    #resource div {
-        height: 20px;
+    #resource #resource div {
+        line-height: 20px;
     }
 
     #resource div:nth-child(2),
@@ -2900,8 +2873,12 @@
         margin-top: 10px;
     }
 
+
+
     #service {
-        padding: 36px 0 34px;
+        display: flex;
+        margin-left: 110px;
+        padding: 36px 0;
         font-size: 1.3rem;
     }
 
@@ -2909,30 +2886,31 @@
         display: flex;
     }
 
-    #service .service-border1 {
-        float: left;
-    }
-
     #service .service-border2 {
-        float: right;
+        margin-left: 66px;
     }
 
     #service .service-border .bold,
     #service .service-border .service-url {
         display: block;
-        padding-top: 5px;
+        padding-top: 12px;
+    }
+
+    #service .service-whale,
+    #service .service-flower {
+        padding: 3px 0 0 4px;
     }
 
     #service .service-whale {
-        margin: 0 61px 0 34px;
+        margin-left: 34px;
         width: 48px;
         height: 48px;
     }
 
     #service .service-flower {
+        margin: -1px 0 0 41px;
         width: 47px;
         height: 50px;
-        margin: -1px 0 0 41px;
     }
 
     #company {
@@ -2949,7 +2927,9 @@
     }
 
     #company li {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        margin: 0 -2px;
         list-style: none;
         color: var(--color_caption1);
     }
@@ -2964,9 +2944,11 @@
 <body>
     <div id="wrap">
         <header id="header">
-            <a href="#" id="header-right-ad">
-                <img src="./q.png" alt="큐: 사전신청 오픈!" width="162px" height="40px">
-            </a>
+            <aside id="ad">
+                <a href="#" id="header-right-ad">
+                    <img src="./q.png" alt="큐: 사전신청 오픈!" width="162px" height="40px">
+                </a>
+            </aside>
             <button id="header-Hamburger" class="header-button">
                 <!--::before -->
                 <div></div>
@@ -2994,7 +2976,6 @@
             <div id="search">
                 <form action="">
                     <a id='search-svg' href="https://www.naver.com/">
-                        <!--::after -->
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path>
                         </svg>
@@ -3022,7 +3003,7 @@
                     <li>
                         <a href="#">
                             <!--::before -->
-                            <div></div>
+                            <div class="icon"></div>
                             <!--::after -->
                             <span>메일</span>
                         </a>
@@ -3030,7 +3011,7 @@
                     <li>
                         <a href="#">
                             <!--::before -->
-                            <div></div>
+                            <div class="icon"></div>
                             <!--::after -->
                             <span>카페</span>
                         </a>
@@ -3038,7 +3019,7 @@
                     <li>
                         <a href="#">
                             <!--::before -->
-                            <div></div>
+                            <div class="icon"></div>
                             <!--::after -->
                             <span>블로그</span>
                         </a>
@@ -3046,7 +3027,7 @@
                     <li>
                         <a href="#">
                             <!--::before -->
-                            <div></div>
+                            <div class="icon"></div>
                             <!--::after -->
                             <span>쇼핑</span>
                         </a>
@@ -3054,7 +3035,7 @@
                     <li>
                         <a href="#">
                             <!--::before -->
-                            <div></div>
+                            <div class="icon"></div>
                             <!--::after -->
                             <span>뉴스</span>
                         </a>
@@ -3062,7 +3043,7 @@
                     <li>
                         <a href="#">
                             <!--::before -->
-                            <div></div>
+                            <div class="icon"></div>
                             <!--::after -->
                             <span>증권</span>
                         </a>
@@ -3070,14 +3051,14 @@
                     <li>
                         <a href="#">
                             <!--::before -->
-                            <div></div>
+                            <div class="icon"></div>
                             <span>부동산</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
                             <!--::before -->
-                            <div></div>
+                            <div class="icon"></div>
                             <!--::after -->
                             <span>지도</span>
                         </a>
@@ -3085,7 +3066,7 @@
                     <li>
                         <a href="#">
                             <!--::before -->
-                            <div></div>
+                            <div class="icon"></div>
                             <!--::after -->
                             <span>웹툰</span>
                         </a>
@@ -3093,7 +3074,7 @@
                     <li>
                         <a href="#">
                             <!--::before -->
-                            <div></div>
+                            <div class="icon"></div>
                             <!--::after -->
                             <span class="blind">더보기</span>
                         </a>
@@ -3121,7 +3102,10 @@
                                 <a href="#" class="bold">뉴스스탠드</a>
                                 <a href="#" class="dot">언론사편집</a>
                                 <a href="#" class="slash">엔터</a>
-                                <a href="#" class="slash">스포츠</a>
+                                <a href="#" class="slash">스포츠
+                                    <!-- ::before -->
+                                    <span class="red">LIVE</span>
+                                </a>
                                 <a href="#" class="slash">경제</a>
                             </header>
                             <div id="main-newsstand-gray">
@@ -3473,7 +3457,6 @@
                                         <span class="dot"></span>
                                         <a href="#">하프클럽</a>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="item">
@@ -3929,7 +3912,7 @@
                 </div>
                 <div id="main-right">
                     <section id="main-login">
-                        <div>네이버를 더 안전하고 편리하게 이용하세요</div>
+                        <div class="text">네이버를 더 안전하고 편리하게 이용하세요</div>
                         <a href="#" id=main-login-button><!--
                           --><i></i><!--
                           --><span>로그인</span>
@@ -3951,13 +3934,13 @@
                         <div id="main-weather-content">
                             <div id="main-weather-left">
                                 <a href="#">
-                                    <div class="sch-border">
+                                    <div class="sketch-border">
                                         <div class="sketch"></div>
-                                        <div class="sch-right">-1.2°
-                                            <div class="sch-right-bottom">흐림</div>
+                                        <div class="sketch-right">-1.2°
+                                            <div class="sketch-right-bottom">흐림</div>
                                         </div>
                                     </div>
-                                    <div class="sch-base">
+                                    <div class="sketch-base">
                                         <span>-2°<span class="blind">최저기온</span>
                                             <!-- before -->
                                             <span class="slash">3°<span class="blind">최고기온</span></span>
@@ -4016,37 +3999,37 @@
                                     <li><a href="#" class="stock-block">
                                             <span class="stock-item">두산로보틱스</span>
                                             <span class="price down">
-                                                <span class="blind">하락</span><i></i>88,800
+                                                <span class="blind">하락</span>
+                                                <i></i>88,800
                                             </span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
                                             <!-- after -->
-                                            <span class="stock-item">인기종목 더보기</span>
+                                            <span class="stock-item arrow">인기종목 더보기</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </section>
-                    <section id="widget">
-                        <div id="widget-content">
+                    <section id="main-widget">
+                        <div id="main-widget-content">
                             <header>위젯 보드</header>
                             <div id="widget-calendar"><!-- 캘린더 -->
                                 <a href="#">
                                     <div class="calendar-border">
                                         <span class="title">캘린더</span>
                                         <div class="box">
-                                            <span class="day">
+                                            <div class="day">
                                                 <span>12.4</span><span>월</span>
-                                            </span>
+                                            </div>
                                             <span class="login">로그인하기</span>
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                            </a>
                             <div id="widget-memo"><!-- 메모 -->
                                 <a href="#">
                                     <div><span class="title">메모</span></div>
@@ -4069,19 +4052,21 @@
                             <div id="widget-English"><!-- 영어사전 -->
                                 <!-- before -->
                                 <div class="English-border">
-                                    <a href="#" class="English-header">
-                                        <span>영어사전</span>
-                                    </a>
-                                    <!-- before -->
-                                    <a href="#" class="English-content">
-                                        <div class="English-text">
-                                            <strong>What are your strengths?</strong>
-                                        </div>
-                                        <div class="korean-text">당신의 강점은 무엇입니까?</div>
-                                    </a>
-                                    <a href="#" class="English-search">
-                                        <b>단어 검색하기</b>
-                                    </a>
+                                    <div class="English-border-line">
+                                        <a href="#" class="English-header">
+                                            <span>영어사전</span>
+                                        </a>
+                                        <!-- before -->
+                                        <a href="#" class="English-content">
+                                            <div class="English-text">
+                                                <strong>What are your strengths?</strong>
+                                            </div>
+                                            <div class="korean-text">당신의 강점은 무엇입니까?</div>
+                                        </a>
+                                        <a href="#" class="English-search">
+                                            <b>단어 검색하기</b>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             <div id="widget-VIBE"><!-- vibe-->
@@ -4144,7 +4129,7 @@
                             <!-- ::after -->
                         </div>
                     </section>
-                    <section id="whale">
+                    <section id="main-whale">
                         <a href="#">
                             <img src="./whale.png" alt="웨일브라우저" width="42" height="42">
                             <div id="whale-content">
@@ -4203,13 +4188,13 @@
                 </section>
                 <section id="notice">
                     <div class="notice-box">
-                        <a href="#" class="title">공지사항</a>
+                        <a href="#" class="title"><strong>공지사항</strong></a>
                         <a href="#">네이버 ‘개인정보 처리방침’ 변경에 대한 안내 말씀드립니다.</a>
                     </div>
                     <a href="#" class="bold">서비스 전체보기</a>
                     <!-- ::after -->
                 </section>
-                <section id="side">
+                <section id="resource-service">
                     <div id="resource">
                         <div>
                             <span class="bold">Creators</span>
@@ -4237,19 +4222,19 @@
                     <div id="service">
                         <div class="service-border service-border1">
                             <div>
-                                <span class="bold">웨일브라우저</span><br>
+                                <span class="bold">웨일 브라우저</span>
                                 <a href="#" class="service-url">이용안내</a>
                             </div>
                             <a href="#" class="service-whale">
-                                <img src="./whale2.png" alt="웨일브라우저" width="48px" height="50px"> </a>
+                                <img src="./whale2.png" alt="웨일 브라우저" width="48px" height="48px"> </a>
                         </div>
                         <div class="service-border service-border2">
                             <div>
-                                <span class=" bold">프로젝트꽃</span><br>
+                                <span class=" bold">프로젝트 꽃</span>
                                 <a href="#" class="service-url">바로가기</a>
                             </div>
                             <a href="#" class="service-flower">
-                                <img src="./flower.png" alt="프로젝트꽃" width="47px" height="50px">
+                                <img src="./flower.png" alt="프로젝트 꽃" width="47px" height="50px">
                             </a>
                         </div>
                     </div>
