@@ -554,7 +554,6 @@
     #main-top-ad {
         display: flex;
         position: relative;
-        width: 1018px;
         height: 120px;
         margin-bottom: 30px;
     }
@@ -568,27 +567,27 @@
         border-radius: 8px;
         background-image: url(./detail.png);
         background-repeat: no-repeat;
-        box-shadow: 1px 5px 5px -3px rgb(0 0 0 / 30%);
     }
 
     #main-top-ad>.left-ad::before,
     #main-top-ad>.left-ad::after {
         content: " ";
         display: block;
-        position: absolute;
+        position: relative;
         right: 0px;
         left: 0px;
-        height: 3px;
-        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4) 70%, transparent 10%);
+        height: 2px;
+        background-image: linear-gradient(to right, rgb(0, 0, 0, 1) 70%, transparent 10%);
         background-size: 15px 2px;
+        z-index: 1;
     }
 
     #main-top-ad>.left-ad:before {
-        bottom: 5px;
+        bottom: 35px;
     }
 
     #main-top-ad>.left-ad::after {
-        top: 5px;
+        top: 71px;
     }
 
     #main-top-ad .right-ad {
@@ -596,11 +595,10 @@
         width: 142px;
         height: 80px;
         margin-top: 20px;
-        margin-left: -25px;
-        border-radius: 50px;
+        margin-left: 5px;
+        border-radius: 5%;
         background-image: url(./velog.png);
         background-repeat: no-repeat;
-        box-shadow: 5px 5px 5px -3px rgb(0 0 0 / 30%);
     }
 
     #main-top-ad .right-ad .play {
@@ -609,16 +607,15 @@
         width: 32px;
         height: 31px;
         margin-top: 20px;
-        margin-left: 120px;
+        margin-left: 125px;
         border-radius: 52%;
         background-image: url(./link.png);
         background-repeat: no-repeat;
 
     }
 
-    #main-top-ad .right-ad .play:hover {
-        background-image: url(./link-icon.png);
-        transform: rotate(15deg)
+    #main-top-ad .right-ad:hover .play {
+        transform: rotate(35deg)
     }
 
     #main-left {
